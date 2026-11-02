@@ -27,7 +27,7 @@ window.PORTFOLIO_CONFIG = {
       issueDate: "October 25, 2026",
       expiryDate: "October 25, 2029",
       credentialId: "5b5a1c7f6a824de5a661e9149a0c18fd",
-      verifyUrl: "https://aws.amazon.com/verification",
+      verifyUrl: "https://cp.certmetrics.com/amazon/en/public/verify/credential/5b5a1c7f6a824de5a661e9149a0c18fd",
       level: "Associate"
     },
     {
@@ -36,7 +36,7 @@ window.PORTFOLIO_CONFIG = {
       issueDate: "February 12, 2026",
       expiryDate: "October 25, 2029",
       credentialId: "c49b3418666a41818f74795c50633cff",
-      verifyUrl: "https://aws.amazon.com/verification",
+      verifyUrl: "https://cp.certmetrics.com/amazon/en/public/verify/credential/c49b3418666a41818f74795c50633cff",
       level: "Foundational"
     }
   ],

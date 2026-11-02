@@ -16,8 +16,8 @@ Personal cloud portfolio of **Rahul Patil**, DevOps Engineer Associate at **Heap
 
 | Certification | Level | Validity | Verification ID | Verify |
 | :--- | :---: | :---: | :---: | :---: |
-| **AWS Certified Solutions Architect – Associate** | Associate | Oct 2026 – Oct 2029 | `5b5a1c7f6a824de5a661e9149a0c18fd` | [Verify Portal](https://aws.amazon.com/verification) |
-| **AWS Certified Cloud Practitioner** | Foundational | Feb 2026 – Oct 2029 | `c49b3418666a41818f74795c50633cff` | [Verify Portal](https://aws.amazon.com/verification) |
+| **AWS Certified Solutions Architect – Associate** | Associate | Oct 2026 – Oct 2029 | `5b5a1c7f6a824de5a661e9149a0c18fd` | [Verify on CertMetrics](https://cp.certmetrics.com/amazon/en/public/verify/credential/5b5a1c7f6a824de5a661e9149a0c18fd) |
+| **AWS Certified Cloud Practitioner** | Foundational | Feb 2026 – Oct 2029 | `c49b3418666a41818f74795c50633cff` | [Verify on CertMetrics](https://cp.certmetrics.com/amazon/en/public/verify/credential/c49b3418666a41818f74795c50633cff) |
 
 ---
 

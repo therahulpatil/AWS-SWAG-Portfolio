@@ -4,9 +4,8 @@
 > **Author:** Rahul Patil  
 > **Current Role:** DevOps Engineer Associate at **HeapTrace Technologies**  
 > **AWS Certifications:**  
-> - **AWS Certified Solutions Architect – Associate** (Oct 25, 2026 – Oct 25, 2029 | ID: `5b5a1c7f6a824de5a661e9149a0c18fd`)  
-> - **AWS Certified Cloud Practitioner** (Feb 12, 2026 – Oct 25, 2029 | ID: `c49b3418666a41818f74795c50633cff`)  
-> - **Credential Verification:** [https://aws.amazon.com/verification](https://aws.amazon.com/verification)  
+> - **AWS Certified Solutions Architect – Associate** (Oct 25, 2026 – Oct 25, 2029 | ID: `5b5a1c7f6a824de5a661e9149a0c18fd`) — [Verify on CertMetrics](https://cp.certmetrics.com/amazon/en/public/verify/credential/5b5a1c7f6a824de5a661e9149a0c18fd)  
+> - **AWS Certified Cloud Practitioner** (Feb 12, 2026 – Oct 25, 2029 | ID: `c49b3418666a41818f74795c50633cff`) — [Verify on CertMetrics](https://cp.certmetrics.com/amazon/en/public/verify/credential/c49b3418666a41818f74795c50633cff)  
 > **Education:** CDAC PGCP ITISS (Aug 2026)  
 > **LinkedIn:** [https://www.linkedin.com/in/patilrahulprafulla](https://www.linkedin.com/in/patilrahulprafulla)  
 > **Featured Project GitHub:** [Automated-CI-CD-and-Security-Compliance-Pipeline-for-Cloud-Applications](https://github.com/Sec-DO/Automated-CI-CD-and-Security-Compliance-Pipeline-for-Cloud-Applications)  
@@ -83,9 +82,8 @@ Located in [`terraform/`](terraform/):
 ## 🛠️ 4. Portfolio Completeness & Structure
 
 1. **Official AWS Certifications Showcase**:
-   - **AWS Certified Solutions Architect – Associate** (Validation ID: `5b5a1c7f6a824de5a661e9149a0c18fd`)
-   - **AWS Certified Cloud Practitioner** (Validation ID: `c49b3418666a41818f74795c50633cff`)
-   - Direct verification links to [https://aws.amazon.com/verification](https://aws.amazon.com/verification).
+   - **AWS Certified Solutions Architect – Associate** (Validation ID: `5b5a1c7f6a824de5a661e9149a0c18fd`) — [Verify on CertMetrics](https://cp.certmetrics.com/amazon/en/public/verify/credential/5b5a1c7f6a824de5a661e9149a0c18fd)
+   - **AWS Certified Cloud Practitioner** (Validation ID: `c49b3418666a41818f74795c50633cff`) — [Verify on CertMetrics](https://cp.certmetrics.com/amazon/en/public/verify/credential/c49b3418666a41818f74795c50633cff)
 2. **About Me & Engineering Journey**:
    - Backstory, current role at HeapTrace Technologies, and 3 core principles (Defense-in-Depth, Automated DevSecOps, Observability).
    - Milestone timeline highlighting:
