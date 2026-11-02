@@ -10,7 +10,7 @@ window.PORTFOLIO_CONFIG = {
     company: "HeapTrace Technologies",
     tagline: "DevOps Engineer Associate at HeapTrace Technologies | AWS Solutions Architect",
     shortBio: "DevOps Engineer Associate at HeapTrace Technologies. 2x AWS Certified (Solutions Architect Associate & Cloud Practitioner). Passionate about automated CI/CD pipelines, Infrastructure as Code (Terraform), secure AWS VPC architectures, and scalable cloud deployments.",
-    avatar: "assets/images/avatar.svg",
+    avatar: "assets/images/rahul-patil.jpg",
     email: "patilrahulprafulla@gmail.com",
     location: "India / Open to Global Remote",
     status: "💼 DevOps Engineer Associate @ HeapTrace Technologies | 2x AWS Certified",
