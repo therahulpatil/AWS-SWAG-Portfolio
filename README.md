@@ -7,6 +7,7 @@
 [![Current Role](https://img.shields.io/badge/Role-DevOps_Associate_%40_HeapTrace-10B981)](https://www.linkedin.com/in/patilrahulprafulla)
 [![Lighthouse](https://img.shields.io/badge/Lighthouse-100%2F100-success?logo=google-chrome&logoColor=white)](https://developers.google.com/web/tools/lighthouse)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-patilrahulprafulla-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/patilrahulprafulla)
+[![Email](https://img.shields.io/badge/Email-patilrahulprafulla%40gmail.com-EA4335?logo=gmail&logoColor=white)](mailto:patilrahulprafulla@gmail.com)
 
 Personal cloud portfolio of **Rahul Patil**, DevOps Engineer Associate at **HeapTrace Technologies**, 2x AWS Certified Solutions Architect, and DevSecOps practitioner (CDAC PGCP ITISS). Built for the **AWS Portfolio Challenge**, featuring production-grade cloud architectures, automated DevSecOps pipelines, automated Terraform IaC deployment, and an interactive **AWS CloudShell v2.0 Terminal** with synthesized Web Audio sound and CI/CD simulation.
 

@@ -2,6 +2,7 @@
 
 > **Project Name:** CloudCraft: Personal AWS Builder Portfolio, Interactive CloudShell & Terraform IaC  
 > **Author:** Rahul Patil  
+> **Email:** [patilrahulprafulla@gmail.com](mailto:patilrahulprafulla@gmail.com)  
 > **Current Role:** DevOps Engineer Associate at **HeapTrace Technologies**  
 > **AWS Certifications:**  
 > - **AWS Certified Solutions Architect – Associate** (Oct 25, 2026 – Oct 25, 2029 | ID: `5b5a1c7f6a824de5a661e9149a0c18fd`) — [Verify on CertMetrics](https://cp.certmetrics.com/amazon/en/public/verify/credential/5b5a1c7f6a824de5a661e9149a0c18fd)  
