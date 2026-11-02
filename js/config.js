@@ -74,14 +74,14 @@ window.PORTFOLIO_CONFIG = {
     ],
     milestones: [
       {
-        year: "November 2026",
-        title: "AWS Portfolio Challenge & Global Cloud Deployment",
-        desc: "Engineered this interactive AWS CloudShell portfolio, deployed with continuous delivery on AWS Amplify Hosting, and connected global edge delivery via Amazon CloudFront."
-      },
-      {
         year: "Present",
         title: "DevOps Engineer Associate at HeapTrace Technologies",
         desc: "Driving automated cloud infrastructure provisioning, CI/CD pipelines, containerization, and AWS cloud security compliance in enterprise production environments."
+      },
+      {
+        year: "November 2026",
+        title: "AWS Portfolio Challenge & Global Cloud Deployment",
+        desc: "Engineered this interactive AWS CloudShell portfolio, deployed with continuous delivery on AWS Amplify Hosting, and connected global edge delivery via Amazon CloudFront."
       },
       {
         year: "October 2026",

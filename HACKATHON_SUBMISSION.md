@@ -88,8 +88,8 @@ Located in [`terraform/`](terraform/):
 2. **About Me & Engineering Journey**:
    - Backstory, current role at HeapTrace Technologies, and 3 core principles (Defense-in-Depth, Automated DevSecOps, Observability).
    - Milestone timeline (reverse chronological order):
-     - *November 2026*: AWS Portfolio Challenge & Global Cloud Deployment.
      - *Present*: DevOps Engineer Associate at HeapTrace Technologies.
+     - *November 2026*: AWS Portfolio Challenge & Global Cloud Deployment.
      - *October 2026*: AWS Certified Solutions Architect – Associate.
      - *August 2026*: CDAC PGCP ITISS & SecureDevOps Pipeline.
      - *February 2026*: AWS Certified Cloud Practitioner.
