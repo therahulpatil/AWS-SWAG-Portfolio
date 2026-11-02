@@ -1,7 +1,8 @@
 # 🏆 AWS Portfolio Challenge: Official Hackathon Submission
 
-> **Project Name:** CloudCraft: Personal AWS Builder Portfolio & Interactive CloudShell  
+> **Project Name:** CloudCraft: Personal AWS Builder Portfolio, Interactive CloudShell & Terraform IaC  
 > **Author:** Rahul Patil  
+> **Current Role:** DevOps Engineer Associate at **HeapTrace Technologies**  
 > **AWS Certifications:**  
 > - **AWS Certified Solutions Architect – Associate** (Oct 25, 2026 – Oct 25, 2029 | ID: `5b5a1c7f6a824de5a661e9149a0c18fd`)  
 > - **AWS Certified Cloud Practitioner** (Feb 12, 2026 – Oct 25, 2029 | ID: `c49b3418666a41818f74795c50633cff`)  
@@ -17,9 +18,9 @@
 
 ## 💡 1. Executive Summary & Inspiration
 
-As a 2x AWS Certified Solutions Architect and DevSecOps practitioner graduating from **CDAC PGCP ITISS**, I believe that cloud engineering is as much about discipline and defense-in-depth as it is about scale. 
+As a **DevOps Engineer Associate at HeapTrace Technologies**, a 2x AWS Certified Solutions Architect, and a graduate of **CDAC PGCP ITISS**, I believe that cloud engineering is as much about discipline and defense-in-depth as it is about scale. 
 
-For the **AWS Portfolio Challenge**, I set out to build an experience that reflects that philosophy: a blazingly fast portfolio deployed globally on **AWS Amplify Hosting**, engineered with zero external build bloat, backed by verified credentials, and featuring a fully interactive **AWS CloudShell Terminal** with zero-dependency audio synthesis, simulated DevSecOps pipelines, and canvas digital rain.
+For the **AWS Portfolio Challenge**, I set out to build an experience that reflects that philosophy: a blazingly fast portfolio deployed globally on **AWS Amplify Hosting** (with complete **Terraform Infrastructure as Code** available in the repository), engineered with zero external build bloat, backed by verified credentials, and featuring a fully interactive **AWS CloudShell Terminal** with zero-dependency audio synthesis, simulated DevSecOps pipelines, and canvas digital rain.
 
 ---
 
@@ -35,24 +36,22 @@ To ensure visitors and judges discover the creative feature without disrupting n
 Visitors can also toggle the terminal from anywhere on the page by pressing the **tilde key (`~`)** or **`Ctrl + K`**.
 
 ### What It Reveals About Me
-The terminal embodies my focus on DevSecOps and cloud systems:
-- **`whoami`**: Reveals my credentials (2x AWS Certified), CDAC ITISS background, and core ethos (*"Security isn't an afterthought—it's the foundation of every scalable cloud architecture"*).
+The terminal embodies my role and focus on DevSecOps and cloud systems:
+- **`whoami`**: Reveals my identity, current position at **HeapTrace Technologies**, 2x AWS Certified credentials, and core ethos (*"Security isn't an afterthought—it's the foundation of every scalable cloud architecture"*).
 - **`certs`**: Prints verified AWS credential IDs for Solutions Architect Associate and Cloud Practitioner with direct verification links.
 - **`superpowers`**: Visualizes technical proficiencies in VPC networking, Terraform IaC, Jenkins, SonarQube, Docker, and Prometheus using ASCII terminal bars.
-- **`story`**: Narrates my engineering journey from designing secure VPCs in March 2024 to earning AWS Certifications and building automated DevSecOps pipelines in 2026.
+- **`story`**: Narrates my engineering journey from designing secure VPCs in March 2024 to earning AWS Certifications, graduating CDAC ITISS, and working as a DevOps Engineer Associate at HeapTrace Technologies.
 - **`sudo deploy`**: Simulates an automated DevSecOps deployment pipeline: validating Terraform IaC topology, running SonarQube SAST & OWASP ZAP gates, auditing container CVEs with Trivy, and deploying globally to AWS Amplify with audio fanfare and confetti!
 - **`goto <project-id>`**: Connects terminal commands directly to the page UI (e.g. `goto securedevops`, `goto aws-vpc`).
 - **`matrix`**: Triggers a full-screen canvas digital rain effect honoring the hacker and security aesthetic.
 
-### Technical Polish
-- **Native Web Audio API Synth**: Procedurally generates keyboard clicks, beeps, and victory chimes without external audio assets.
-- **Tab Autocomplete & History Navigation**: Supports command autocompletion and `↑`/`↓` history buffer.
-- **Non-Intrusive**: Draggable, minimizable, maximizable, and responsive down to mobile devices with quick-tap suggestion chips.
-
 ---
 
-## ☁️ 3. AWS Services Used & Architecture Breakdown
+## ☁️ 3. AWS Services & Terraform Infrastructure Breakdown
 
+This portfolio supports **two dual deployment options**:
+
+### Option A: AWS Amplify Hosting (Continuous Git Delivery)
 ```
 [ GitHub (Sec-DO Repo) ]
           │  (Git Push Webhook)
@@ -72,11 +71,12 @@ The terminal embodies my focus on DevSecOps and cloud systems:
 [ End-Users Worldwide ] ────► Sub-Second Response (<100ms TTFB)
 ```
 
-### AWS Services Breakdown:
-1. **AWS Amplify Hosting**: Continuous deployment, zero-config static hosting, instant edge cache invalidations.
-2. **Amazon CloudFront**: Global CDN with 450+ Points of Presence providing Brotli and Gzip compression.
-3. **AWS Certificate Manager (ACM)**: Managed SSL/TLS encryption for HTTPS.
-4. **AWS Virtual Private Cloud (VPC)**: Multi-tier architectural design with public/private subnets, NAT Gateways, and Bastion hosts showcased in the projects section.
+### Option B: Production-Grade Terraform IaC (S3 + CloudFront OAC)
+Located in [`terraform/`](terraform/):
+- **Amazon S3**: 100% blocked public access (`aws_s3_bucket_public_access_block`), AES-256 server-side encryption, and bucket versioning.
+- **CloudFront Origin Access Control (OAC)**: Enforces SigV4 signing so only the CloudFront distribution can access S3 objects.
+- **CloudFront Security Headers Policy**: Enforces HSTS (1 year preload), X-Content-Type-Options: nosniff, X-Frame-Options: SAMEORIGIN, and Referrer-Policy.
+- **Automated S3 Object Sync**: Automatically calculates MD5 checksums (`filemd5`) and maps accurate MIME types for instant browser rendering.
 
 ---
 
@@ -87,19 +87,20 @@ The terminal embodies my focus on DevSecOps and cloud systems:
    - **AWS Certified Cloud Practitioner** (Validation ID: `c49b3418666a41818f74795c50633cff`)
    - Direct verification links to [https://aws.amazon.com/verification](https://aws.amazon.com/verification).
 2. **About Me & Engineering Journey**:
-   - Backstory and 3 core principles (Defense-in-Depth, Automated DevSecOps, Observability).
+   - Backstory, current role at HeapTrace Technologies, and 3 core principles (Defense-in-Depth, Automated DevSecOps, Observability).
    - Milestone timeline highlighting:
      - *March 2024*: Secure AWS VPC Architecture.
      - *February 2026*: AWS Certified Cloud Practitioner.
      - *August 2026*: CDAC PGCP ITISS & SecureDevOps Pipeline.
      - *October 2026*: AWS Certified Solutions Architect – Associate.
-     - *November 2026*: AWS Portfolio Challenge.
+     - *Present*: DevOps Engineer Associate at HeapTrace Technologies.
+     - *November 2026*: AWS Portfolio Challenge & Global Cloud Deployment.
 3. **Skills & Tech Superpowers**:
    - Filterable skills across Cloud & AWS, DevSecOps & CI/CD, Security & Networking, and Monitoring & Tools.
 4. **Engineering Projects**:
    - **SecureDevOps**: Automated CI/CD and Security Compliance Pipeline (Terraform, Jenkins, SonarQube, OWASP ZAP, Trivy, Docker, Prometheus & Grafana). [GitHub Repo](https://github.com/Sec-DO/Automated-CI-CD-and-Security-Compliance-Pipeline-for-Cloud-Applications).
    - **Secure AWS VPC Architecture**: Dual-tier subnets, Bastion Host, NAT Gateway, Security Groups, and NACLs.
-   - **AWS CloudShell Portfolio**: Interactive terminal emulator deployed on AWS Amplify.
+   - **AWS CloudShell Portfolio & Terraform IaC**: Interactive terminal emulator deployed on AWS Amplify and provisionable via Terraform.
    - **CloudPulse**: Serverless telemetry and real-time cloud monitoring.
 
 ---
@@ -114,7 +115,7 @@ The terminal embodies my focus on DevSecOps and cloud systems:
 * **Problem**: Many cloud deployments only discover vulnerabilities after code reaches production environments.
 * **Solution**: In the SecureDevOps platform, I automated a multi-stage security pipeline using Jenkins. Every commit triggers SonarQube SAST analysis and OWASP ZAP dynamic scans. Before container images are pushed to registries, Trivy performs static vulnerability checks on Docker layers. If any critical CVE is found, the build fails immediately, preventing vulnerable artifacts from reaching AWS infrastructure.
 
-### Challenge 3: Blending Interactive Creativity with Clean Usability
+### Challenge 3: Balancing Interactive Creativity with Clean Usability
 * **Problem**: Creative gimmicks often break standard portfolio navigation or bloat load times.
 * **Solution**: Built the AWS CloudShell as an overlay modal that is completely non-intrusive. Standard visitors can navigate the semantic sections smoothly, while judges looking for the creative feature have clear visible hints (`[💡 Hint: CloudShell (~)]`) to engage with the terminal.
 
@@ -125,6 +126,8 @@ The terminal embodies my focus on DevSecOps and cloud systems:
 - [x] Live AWS Amplify URL loads with HTTPS.
 - [x] AWS Solutions Architect – Associate verified on AWS portal.
 - [x] AWS Cloud Practitioner verified on AWS portal.
+- [x] Current Role at HeapTrace Technologies documented.
+- [x] Terraform files created in `terraform/` for S3 + CloudFront OAC.
 - [x] Interactive AWS CloudShell functions via keyboard shortcut `~` and visible hint pill.
 - [x] `sudo deploy` pipeline completes with sound FX and confetti.
 - [x] Featured GitHub repository accessible: [Sec-DO/Automated-CI-CD](https://github.com/Sec-DO/Automated-CI-CD-and-Security-Compliance-Pipeline-for-Cloud-Applications).
@@ -133,4 +136,4 @@ The terminal embodies my focus on DevSecOps and cloud systems:
 
 ## 🏁 7. Conclusion
 
-This project brings together the two sides of modern cloud engineering: rock-solid infrastructure design and creative, delightful user interfaces. With AWS Amplify Hosting, deploying globally resilient applications has never been more powerful.
+This project brings together the two sides of modern cloud engineering: rock-solid infrastructure design and creative, delightful user interfaces. With AWS Amplify Hosting and Terraform, deploying globally resilient applications has never been more powerful.

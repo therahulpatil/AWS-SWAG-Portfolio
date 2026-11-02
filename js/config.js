@@ -1,16 +1,19 @@
 /**
  * Centralized Portfolio Configuration for Rahul Patil
- * AWS Certified Solutions Architect & DevSecOps Engineer
+ * DevOps Engineer Associate at HeapTrace Technologies
+ * 2x AWS Certified Solutions Architect & DevSecOps Engineer
  */
 window.PORTFOLIO_CONFIG = {
   personal: {
     name: "Rahul Patil",
-    tagline: "AWS Certified Solutions Architect & DevSecOps Engineer",
-    shortBio: "Architecting resilient, production-grade cloud environments on AWS. Specialized in multi-tier secure VPC networking, automated DevSecOps pipelines, Infrastructure as Code (Terraform), and high-availability cloud deployments.",
+    role: "DevOps Engineer Associate",
+    company: "HeapTrace Technologies",
+    tagline: "DevOps Engineer Associate at HeapTrace Technologies | AWS Solutions Architect",
+    shortBio: "DevOps Engineer Associate at HeapTrace Technologies. 2x AWS Certified (Solutions Architect Associate & Cloud Practitioner). Passionate about automated CI/CD pipelines, Infrastructure as Code (Terraform), secure AWS VPC architectures, and scalable cloud deployments.",
     avatar: "assets/images/avatar.svg",
     email: "builder.patil@example.com",
     location: "India / Open to Global Remote",
-    status: "🚀 2x AWS Certified (SAA + CCP) | CDAC PGCP ITISS Graduate",
+    status: "💼 DevOps Engineer Associate @ HeapTrace Technologies | 2x AWS Certified",
     github: "https://github.com/Sec-DO",
     linkedin: "https://www.linkedin.com/in/patilrahulprafulla",
     awsBuilder: "https://builder.aws.com",
@@ -40,17 +43,17 @@ window.PORTFOLIO_CONFIG = {
 
   stats: [
     { label: "AWS Certifications", value: "2x" },
+    { label: "Current Role", value: "DevOps @ HeapTrace" },
     { label: "DevSecOps Security Gates", value: "100%" },
-    { label: "VPC Network Security", value: "Hardened" },
-    { label: "Global Edge Uptime", value: "99.99%" }
+    { label: "VPC Network Security", value: "Hardened" }
   ],
 
   about: {
-    headline: "Designing secure, automated cloud foundations where security is built-in, not bolted on.",
+    headline: "Engineering automated, secure cloud foundations at HeapTrace Technologies with defense-in-depth.",
     paragraphs: [
-      "Hello! I'm Rahul Patil, an AWS Certified Solutions Architect – Associate and DevSecOps practitioner with a specialized background from CDAC PGCP ITISS (Information Technology Infrastructure, Systems and Security).",
-      "My cloud engineering ethos centers on defense-in-depth: from architecting dual-tier VPCs with Bastion hosts, NAT Gateways, and isolated subnets, to creating automated DevSecOps pipelines integrating Terraform, Jenkins, SonarQube, OWASP ZAP, and Trivy container vulnerability auditing.",
-      "Whether configuring automated multibranch CI/CD pipelines or provisioning resilient infrastructure on AWS, I focus on security compliance, zero-trust network segregation, and high-performance scalability."
+      "Hello! I'm Rahul Patil, currently working as a DevOps Engineer Associate at HeapTrace Technologies. I am a 2x AWS Certified engineer (Solutions Architect – Associate & Cloud Practitioner) and CDAC PGCP ITISS graduate.",
+      "At HeapTrace Technologies and in my engineering initiatives, I specialize in automating cloud infrastructure using Terraform, architecting multi-tier AWS VPCs with strict network isolation, and building end-to-end DevSecOps pipelines integrating Jenkins, SonarQube, OWASP ZAP, and Trivy.",
+      "My passion lies in bridging software development and cloud operations: enforcing least privilege (IAM), automating compliance gates, and delivering high-availability systems with sub-second latency via AWS Amplify and CloudFront."
     ],
     principles: [
       {
@@ -91,6 +94,11 @@ window.PORTFOLIO_CONFIG = {
         desc: "Validated deep technical expertise in architecting secure, cost-optimized, fault-tolerant, and high-performing systems on AWS. (ID: 5b5a1c7f6a824de5a661e9149a0c18fd)"
       },
       {
+        year: "Present",
+        title: "DevOps Engineer Associate at HeapTrace Technologies",
+        desc: "Driving automated cloud infrastructure provisioning, CI/CD pipelines, containerization, and AWS cloud security compliance in enterprise production environments."
+      },
+      {
         year: "November 2026",
         title: "AWS Portfolio Challenge & Global Cloud Deployment",
         desc: "Engineered this interactive AWS CloudShell portfolio, deployed with continuous delivery on AWS Amplify Hosting, and connected global edge delivery via Amazon CloudFront."
@@ -111,7 +119,7 @@ window.PORTFOLIO_CONFIG = {
       { name: "AWS IAM & Least Privilege", category: "Cloud & AWS", level: 94, highlight: true },
 
       // DevSecOps & CI/CD
-      { name: "Terraform (IaC)", category: "DevSecOps & CI/CD", level: 92, highlight: true },
+      { name: "Terraform (IaC)", category: "DevSecOps & CI/CD", level: 94, highlight: true },
       { name: "Jenkins CI/CD Automation", category: "DevSecOps & CI/CD", level: 90, highlight: true },
       { name: "Docker & Containerization", category: "DevSecOps & CI/CD", level: 90 },
       { name: "SonarQube (SAST)", category: "DevSecOps & CI/CD", level: 88, highlight: true },
@@ -218,8 +226,9 @@ window.PORTFOLIO_CONFIG = {
     version: "2.4.0-amplify",
     easterEggs: {
       motto: "Security isn't an afterthought—it's the foundation of every scalable cloud architecture.",
+      currentRole: "DevOps Engineer Associate at HeapTrace Technologies",
       favoriteTech: "AWS VPC + Terraform + Jenkins + Prometheus for rock-solid DevSecOps.",
-      superpower: "Eliminating CVE vulnerabilities and hardening AWS network ACLs before production release.",
+      superpower: "Automating cloud infrastructure with Terraform and eliminating CVE vulnerabilities before production release.",
       funFact: "Double AWS Certified: SAA-C03 (Solutions Architect Associate) & CLF-C02 (Cloud Practitioner) valid through 2029!"
     }
   }

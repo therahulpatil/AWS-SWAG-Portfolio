@@ -330,6 +330,7 @@ window.AWSCloudShell = (function () {
     const easter = window.PORTFOLIO_CONFIG.terminal.easterEggs;
     const html = `
 <div class="term-line"><span class="term-highlight">Identity:</span> ${p.name} - ${p.tagline}</div>
+<div class="term-line"><span class="term-highlight">Current Role:</span> DevOps Engineer Associate @ HeapTrace Technologies</div>
 <div class="term-line"><span class="term-highlight">Education:</span> CDAC PGCP ITISS (Aug 2026)</div>
 <div class="term-line"><span class="term-highlight">Credentials:</span> 2x AWS Certified (Solutions Architect Associate & Cloud Practitioner)</div>
 <div class="term-line"><span class="term-highlight">LinkedIn:</span> <a href="${p.linkedin}" target="_blank" style="color: #00f0ff;">${p.linkedin}</a></div>

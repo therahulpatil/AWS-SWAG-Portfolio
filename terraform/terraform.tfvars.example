@@ -1,0 +1,25 @@
+# AWS Region
+aws_region = "us-east-1"
+
+# Project Identifier
+project_name = "rahul-patil-portfolio"
+
+# Environment
+environment = "prod"
+
+# Set to true if you want to also provision an AWS Amplify App via Terraform
+enable_amplify = false
+
+# GitHub repository details (used if enable_amplify is true)
+github_repository   = "https://github.com/Sec-DO/AWS-SWAG-Portfolio"
+github_access_token = ""
+
+# Resource Tags
+tags = {
+  Project     = "AWS-SWAG-Portfolio"
+  Owner       = "Rahul Patil"
+  Role        = "DevOps Engineer Associate"
+  Company     = "HeapTrace Technologies"
+  ManagedBy   = "Terraform"
+  Environment = "Production"
+}
