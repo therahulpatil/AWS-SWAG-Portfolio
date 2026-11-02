@@ -1777,3 +1777,270 @@ textarea.form-input {
     height: 22px;
   }
 }
+
+
+/* ==========================================================================
+   OFFICIAL AWS & DEVSECOPS LOGOS JUGGLING ORBITS & ARSENAL
+   ========================================================================== */
+
+.juggle-orb img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.4));
+}
+
+.juggle-orb:hover img {
+  transform: scale(1.18);
+}
+
+/* Specific Tool Orb Border & Glow Color Accents */
+.orb-ec2 {
+  border-color: #ed7100;
+  box-shadow: 0 0 16px rgba(237, 113, 0, 0.4);
+  animation: juggle-1 4.3s ease-in-out infinite alternate;
+}
+.orb-ec2:hover {
+  border-color: #ff9900;
+  box-shadow: 0 0 28px rgba(255, 153, 0, 0.8);
+}
+
+.orb-s3 {
+  border-color: #3f8624;
+  box-shadow: 0 0 16px rgba(63, 134, 36, 0.4);
+  animation: juggle-3 4.9s ease-in-out infinite alternate;
+}
+.orb-s3:hover {
+  border-color: #569d31;
+  box-shadow: 0 0 28px rgba(86, 157, 49, 0.8);
+}
+
+.orb-ebs {
+  border-color: #3f8624;
+  box-shadow: 0 0 16px rgba(63, 134, 36, 0.35);
+  animation: juggle-10 5.1s ease-in-out infinite alternate;
+}
+.orb-ebs:hover {
+  border-color: #10b981;
+  box-shadow: 0 0 28px rgba(16, 185, 129, 0.8);
+}
+
+.orb-elb {
+  border-color: #8c4fff;
+  box-shadow: 0 0 16px rgba(140, 79, 255, 0.4);
+  animation: juggle-11 4.7s ease-in-out infinite alternate;
+}
+.orb-elb:hover {
+  border-color: #a855f7;
+  box-shadow: 0 0 28px rgba(168, 85, 247, 0.8);
+}
+
+.orb-autoscaling {
+  border-color: #ed7100;
+  box-shadow: 0 0 16px rgba(237, 113, 0, 0.4);
+  animation: juggle-12 5.3s ease-in-out infinite alternate;
+}
+.orb-autoscaling:hover {
+  border-color: #ff9900;
+  box-shadow: 0 0 28px rgba(255, 153, 0, 0.8);
+}
+
+.orb-iam {
+  border-color: #dd344c;
+  box-shadow: 0 0 16px rgba(221, 52, 76, 0.4);
+  animation: juggle-5 4.6s ease-in-out infinite alternate;
+}
+.orb-iam:hover {
+  border-color: #ef4444;
+  box-shadow: 0 0 28px rgba(239, 68, 68, 0.8);
+}
+
+.orb-kms {
+  border-color: #dd344c;
+  box-shadow: 0 0 16px rgba(221, 52, 76, 0.35);
+  animation: juggle-13 5.5s ease-in-out infinite alternate;
+}
+.orb-kms:hover {
+  border-color: #f43f5e;
+  box-shadow: 0 0 28px rgba(244, 63, 94, 0.8);
+}
+
+.orb-cloudwatch {
+  border-color: #c925d1;
+  box-shadow: 0 0 16px rgba(201, 37, 209, 0.4);
+  animation: juggle-6 5.0s ease-in-out infinite alternate;
+}
+.orb-cloudwatch:hover {
+  border-color: #e879f9;
+  box-shadow: 0 0 28px rgba(232, 121, 249, 0.8);
+}
+
+.orb-codepipeline {
+  border-color: #3b48cc;
+  box-shadow: 0 0 16px rgba(59, 72, 204, 0.4);
+  animation: juggle-14 4.8s ease-in-out infinite alternate;
+}
+.orb-codepipeline:hover {
+  border-color: #60a5fa;
+  box-shadow: 0 0 28px rgba(96, 165, 250, 0.8);
+}
+
+.orb-eks {
+  border-color: #ed7100;
+  box-shadow: 0 0 16px rgba(237, 113, 0, 0.4);
+  animation: juggle-2 4.4s ease-in-out infinite alternate;
+}
+.orb-eks:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 0 28px rgba(56, 189, 248, 0.8);
+}
+
+.orb-ecs {
+  border-color: #ed7100;
+  box-shadow: 0 0 16px rgba(237, 113, 0, 0.35);
+  animation: juggle-8 5.2s ease-in-out infinite alternate;
+}
+.orb-ecs:hover {
+  border-color: #ff9900;
+  box-shadow: 0 0 28px rgba(255, 153, 0, 0.8);
+}
+
+.orb-k8s {
+  border-color: #326ce5;
+  box-shadow: 0 0 16px rgba(50, 108, 229, 0.4);
+  animation: juggle-4 4.8s ease-in-out infinite alternate;
+}
+.orb-k8s:hover {
+  border-color: #60a5fa;
+  box-shadow: 0 0 28px rgba(96, 165, 250, 0.8);
+}
+
+.orb-argocd {
+  border-color: #ef6b48;
+  box-shadow: 0 0 16px rgba(239, 107, 72, 0.4);
+  animation: juggle-7 4.6s ease-in-out infinite alternate;
+}
+.orb-argocd:hover {
+  border-color: #fb923c;
+  box-shadow: 0 0 28px rgba(251, 146, 60, 0.8);
+}
+
+.orb-gitops {
+  border-color: #00f0ff;
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.4);
+  animation: juggle-9 5.4s ease-in-out infinite alternate;
+}
+.orb-gitops:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 0 28px rgba(56, 189, 248, 0.8);
+}
+
+/* Additional Juggling Trajectories */
+@keyframes juggle-10 {
+  0%   { transform: translate(110px, 165px) rotate(-5deg); }
+  50%  { transform: translate(155px, 195px) rotate(4deg); }
+  100% { transform: translate(90px, 215px) rotate(-3deg); }
+}
+
+@keyframes juggle-11 {
+  0%   { transform: translate(-110px, 165px) rotate(6deg); }
+  50%  { transform: translate(-155px, 195px) rotate(-5deg); }
+  100% { transform: translate(-90px, 215px) rotate(4deg); }
+}
+
+@keyframes juggle-12 {
+  0%   { transform: translate(210px, 55px) rotate(-6deg); }
+  50%  { transform: translate(245px, -15px) rotate(5deg); }
+  100% { transform: translate(215px, -75px) rotate(-4deg); }
+}
+
+@keyframes juggle-13 {
+  0%   { transform: translate(-210px, 55px) rotate(5deg); }
+  50%  { transform: translate(-245px, -15px) rotate(-6deg); }
+  100% { transform: translate(-215px, -75px) rotate(4deg); }
+}
+
+@keyframes juggle-14 {
+  0%   { transform: translate(0px, 225px) rotate(4deg); }
+  50%  { transform: translate(50px, 245px) rotate(-4deg); }
+  100% { transform: translate(-50px, 240px) rotate(5deg); }
+}
+
+/* ==========================================================================
+   OFFICIAL ARSENAL GRID COMPONENT
+   ========================================================================== */
+.arsenal-grid-wrapper {
+  margin-top: 3.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.arsenal-category-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--aws-orange);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arsenal-items-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.arsenal-items-row:last-child {
+  margin-bottom: 0;
+}
+
+.arsenal-card {
+  background: rgba(13, 19, 34, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  transition: var(--transition-smooth);
+}
+
+.arsenal-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--aws-orange);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px var(--aws-orange-glow);
+}
+
+.arsenal-icon-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+  transition: transform 0.2s ease;
+}
+
+.arsenal-card:hover .arsenal-icon-img {
+  transform: scale(1.15);
+}
+
+.arsenal-card-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.arsenal-card-sub {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}

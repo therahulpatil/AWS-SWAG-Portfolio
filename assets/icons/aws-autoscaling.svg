@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Official AWS Auto Scaling Icon -->
+  <rect x="8" y="8" width="48" height="48" rx="8" fill="#ED7100" />
+  <!-- Scaling chevrons & server icon -->
+  <rect x="24" y="24" width="16" height="16" rx="3" fill="#FFFFFF" fill-opacity="0.2" />
+  <g stroke="#FFFFFF" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Top-Right Scaling Arrow -->
+    <path d="M38 20h6v6M44 20l-8 8" />
+    <!-- Bottom-Left Scaling Arrow -->
+    <path d="M26 44h-6v-6M20 44l8-8" />
+  </g>
+  <text x="32" y="53" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="7" text-anchor="middle">AUTO SCALE</text>
+</svg>

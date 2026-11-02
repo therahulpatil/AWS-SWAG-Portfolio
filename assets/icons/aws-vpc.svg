@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Official AWS VPC Networking Icon (Purple #8C4FFF) -->
+  <rect x="8" y="8" width="48" height="48" rx="8" fill="#8C4FFF" />
+  <!-- VPC Cloud / Subnet Boundary -->
+  <path d="M22 34a6 6 0 0110.5-4 7 7 0 0113.5 2 5 5 0 01-1 9.9H22a6 6 0 010-12z" fill="#FFFFFF" fill-opacity="0.25" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round" />
+  <circle cx="26" cy="36" r="2" fill="#FFFFFF" />
+  <circle cx="38" cy="36" r="2" fill="#FFFFFF" />
+  <line x1="26" y1="36" x2="38" y2="36" stroke="#FFFFFF" stroke-width="1.5" />
+  <text x="32" y="52" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="8.5" text-anchor="middle">VPC</text>
+</svg>

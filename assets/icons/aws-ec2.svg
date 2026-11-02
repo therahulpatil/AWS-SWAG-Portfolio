@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Official AWS EC2 Compute Icon (Orange #ED7100 / #FF9900) -->
+  <rect x="8" y="8" width="48" height="48" rx="8" fill="#ED7100" />
+  <rect x="14" y="14" width="36" height="36" rx="4" fill="#FFFFFF" fill-opacity="0.15" />
+  <!-- Server blades & EC2 arrows -->
+  <path d="M22 24h20v3H22zm0 6h20v3H22zm0 6h20v3H22z" fill="#FFFFFF" />
+  <circle cx="18" cy="25.5" r="2" fill="#FFFFFF" />
+  <circle cx="18" cy="31.5" r="2" fill="#FFFFFF" />
+  <circle cx="18" cy="37.5" r="2" fill="#FFFFFF" />
+  <text x="32" y="52" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="8" text-anchor="middle">EC2</text>
+</svg>

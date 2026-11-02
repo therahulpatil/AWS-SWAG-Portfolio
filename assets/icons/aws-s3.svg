@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Official AWS S3 Storage Icon (Green #3F8624) -->
+  <rect x="8" y="8" width="48" height="48" rx="8" fill="#3F8624" />
+  <!-- S3 Storage Bucket Silhouette -->
+  <path d="M20 20h24l-3 20H23L20 20z" fill="#FFFFFF" fill-opacity="0.25" />
+  <ellipse cx="32" cy="20" rx="12" ry="4" fill="#FFFFFF" />
+  <path d="M20 20v6c0 2.2 5.4 4 12 4s12-1.8 12-4v-6l-3 18c-.3 1.5-4 2.5-9 2.5s-8.7-1-9-2.5L20 20z" fill="#FFFFFF" />
+  <text x="32" y="52" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="9" text-anchor="middle">S3</text>
+</svg>

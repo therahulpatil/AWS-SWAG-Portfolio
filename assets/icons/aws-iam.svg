@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Official AWS IAM Security Icon (Red #DD344C) -->
+  <rect x="8" y="8" width="48" height="48" rx="8" fill="#DD344C" />
+  <!-- IAM Key and Badge -->
+  <g fill="#FFFFFF">
+    <circle cx="26" cy="26" r="6" fill="none" stroke="#FFFFFF" stroke-width="3" />
+    <path d="M30 30l12 12v-4h4v-4h4v-4l-8-8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  </g>
+  <text x="32" y="52" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="8.5" text-anchor="middle">IAM</text>
+</svg>

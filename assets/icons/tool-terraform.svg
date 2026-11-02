@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Official HashiCorp Terraform (#844FBA) -->
+  <rect x="6" y="6" width="52" height="52" rx="10" fill="#1C1826" stroke="#844FBA" stroke-width="2" />
+  <g fill="#844FBA">
+    <!-- Isometric Top Left block -->
+    <polygon points="26,14 26,27 15,20.5 15,7.5" />
+    <!-- Isometric Mid block -->
+    <polygon points="28,28 28,41 17,34.5 17,21.5" />
+    <!-- Isometric Right Top block -->
+    <polygon points="41,21.5 41,34.5 30,28 30,15" fill="#A855F7" />
+    <!-- Isometric Right Lower block -->
+    <polygon points="41,36 41,49 30,42.5 30,29.5" fill="#A855F7" />
+    <!-- Isometric Far Right block -->
+    <polygon points="53,28 53,41 42,34.5 42,21.5" fill="#C084FC" />
+  </g>
+</svg>
