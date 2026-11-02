@@ -1,93 +1,196 @@
 /**
- * Centralized Portfolio Configuration
- * Easily update your personal details, links, projects, and skills here!
+ * Centralized Portfolio Configuration for Rahul Patil
+ * AWS Certified Solutions Architect & DevSecOps Engineer
  */
 window.PORTFOLIO_CONFIG = {
   personal: {
-    name: "Patil",
-    tagline: "Cloud Architect & Full-Stack Engineer",
-    shortBio: "Transforming ambitious ideas into resilient, cloud-native applications. Passionate about serverless architectures, distributed systems, and delightful developer experiences.",
+    name: "Rahul Patil",
+    tagline: "AWS Certified Solutions Architect & DevSecOps Engineer",
+    shortBio: "Architecting resilient, production-grade cloud environments on AWS. Specialized in multi-tier secure VPC networking, automated DevSecOps pipelines, Infrastructure as Code (Terraform), and high-availability cloud deployments.",
     avatar: "assets/images/avatar.svg",
     email: "builder.patil@example.com",
-    location: "Global / Remote",
-    status: "🚀 Building cloud-native solutions & seeking new challenges",
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
+    location: "India / Open to Global Remote",
+    status: "🚀 2x AWS Certified (SAA + CCP) | CDAC PGCP ITISS Graduate",
+    github: "https://github.com/Sec-DO",
+    linkedin: "https://www.linkedin.com/in/patilrahulprafulla",
     awsBuilder: "https://builder.aws.com",
-    resumeUrl: "#contact"
+    resumeUrl: "https://www.linkedin.com/in/patilrahulprafulla"
   },
 
+  certifications: [
+    {
+      title: "AWS Certified Solutions Architect – Associate",
+      badge: "assets/images/cert-saa.svg",
+      issueDate: "October 25, 2026",
+      expiryDate: "October 25, 2029",
+      credentialId: "5b5a1c7f6a824de5a661e9149a0c18fd",
+      verifyUrl: "https://aws.amazon.com/verification",
+      level: "Associate"
+    },
+    {
+      title: "AWS Certified Cloud Practitioner",
+      badge: "assets/images/cert-ccp.svg",
+      issueDate: "February 12, 2026",
+      expiryDate: "October 25, 2029",
+      credentialId: "c49b3418666a41818f74795c50633cff",
+      verifyUrl: "https://aws.amazon.com/verification",
+      level: "Foundational"
+    }
+  ],
+
   stats: [
-    { label: "Cloud Projects Deployed", value: "12+" },
-    { label: "AWS Services Explored", value: "20+" },
-    { label: "CI/CD Automations", value: "100%" },
-    { label: "Uptime Focus", value: "99.99%" }
+    { label: "AWS Certifications", value: "2x" },
+    { label: "DevSecOps Security Gates", value: "100%" },
+    { label: "VPC Network Security", value: "Hardened" },
+    { label: "Global Edge Uptime", value: "99.99%" }
   ],
 
   about: {
-    headline: "Architecting reliable cloud software with clean code and relentless curiosity.",
+    headline: "Designing secure, automated cloud foundations where security is built-in, not bolted on.",
     paragraphs: [
-      "Hello! I'm Patil, a software engineer with an obsession for cloud systems, serverless architectures, and responsive user experiences. My journey started with a fascination for how bits travel across the globe in milliseconds, which led me straight into the AWS Cloud ecosystem.",
-      "Today, I build end-to-end applications that don't just look great on the surface, but are backed by rock-solid cloud infrastructure — scalable databases, event-driven microservices, and automated CI/CD deployment pipelines.",
-      "When I'm not writing code or monitoring cloud telemetry, you'll find me exploring emerging AI capabilities, optimizing latency bottlenecks, or experimenting with interactive developer tools."
+      "Hello! I'm Rahul Patil, an AWS Certified Solutions Architect – Associate and DevSecOps practitioner with a specialized background from CDAC PGCP ITISS (Information Technology Infrastructure, Systems and Security).",
+      "My cloud engineering ethos centers on defense-in-depth: from architecting dual-tier VPCs with Bastion hosts, NAT Gateways, and isolated subnets, to creating automated DevSecOps pipelines integrating Terraform, Jenkins, SonarQube, OWASP ZAP, and Trivy container vulnerability auditing.",
+      "Whether configuring automated multibranch CI/CD pipelines or provisioning resilient infrastructure on AWS, I focus on security compliance, zero-trust network segregation, and high-performance scalability."
     ],
     principles: [
       {
-        icon: "⚡",
-        title: "Serverless & Cloud-First",
-        desc: "Designing decoupled, event-driven architectures that scale on demand and minimize operational overhead."
-      },
-      {
         icon: "🛡️",
-        title: "Resilient & Secure by Default",
-        desc: "Strict adherence to least privilege (IAM), end-to-end encryption, automated backups, and zero trust."
+        title: "Defense-in-Depth & Zero Trust",
+        desc: "Hardening every layer: network subnets, stateless NACLs, stateful Security Groups, IAM least privilege, and container vulnerability scans."
       },
       {
-        icon: "🎨",
-        title: "Developer & User Centricity",
-        desc: "High performance, sub-second response times, accessible interfaces, and intuitive ergonomics."
+        icon: "⚙️",
+        title: "Automated DevSecOps Compliance",
+        desc: "Shifting security left via Terraform IaC, Jenkins automated build gates, SAST (SonarQube), and DAST (OWASP ZAP) security testing."
+      },
+      {
+        icon: "📈",
+        title: "Observable & Resilient Architecture",
+        desc: "Real-time metrics, telemetry alerting with Prometheus & Grafana, and automated self-healing cloud deployments."
       }
     ],
     milestones: [
-      { year: "2024", title: "Started Cloud Journey", desc: "Built first full-stack web apps and discovered the power of AWS Amplify, S3, and DynamoDB." },
-      { year: "2025", title: "Serverless Specialization", desc: "Designed event-driven APIs with AWS Lambda, API Gateway, and automated CI/CD with GitHub Actions." },
-      { year: "2026", title: "AWS Portfolio Challenge & Beyond", desc: "Engineered scalable cloud architectures, built this interactive portfolio, and pursuing AWS Certifications." }
+      {
+        year: "March 2024",
+        title: "Secure AWS VPC Architecture for Web App Deployment",
+        desc: "Designed and implemented dual-tier VPC with public/private subnets, Bastion Host for secure SSH access, NAT Gateway for outbound traffic, and strict NACL/SG rules."
+      },
+      {
+        year: "February 2026",
+        title: "Earned AWS Certified Cloud Practitioner",
+        desc: "Demonstrated foundational mastery of core AWS cloud services, security, pricing models, and cloud architectural best practices. (ID: c49b3418666a41818f74795c50633cff)"
+      },
+      {
+        year: "August 2026",
+        title: "CDAC PGCP ITISS & SecureDevOps Pipeline Project",
+        desc: "Graduated CDAC PGCP ITISS. Engineered end-to-end DevSecOps platform with Terraform, Jenkins, SonarQube, OWASP ZAP, Trivy, Docker, Prometheus, and Grafana."
+      },
+      {
+        year: "October 2026",
+        title: "Earned AWS Certified Solutions Architect – Associate",
+        desc: "Validated deep technical expertise in architecting secure, cost-optimized, fault-tolerant, and high-performing systems on AWS. (ID: 5b5a1c7f6a824de5a661e9149a0c18fd)"
+      },
+      {
+        year: "November 2026",
+        title: "AWS Portfolio Challenge & Global Cloud Deployment",
+        desc: "Engineered this interactive AWS CloudShell portfolio, deployed with continuous delivery on AWS Amplify Hosting, and connected global edge delivery via Amazon CloudFront."
+      }
     ]
   },
 
   skills: {
-    categories: ["All", "Cloud & DevOps", "Backend & APIs", "Frontend & UI", "Databases & Tools"],
+    categories: ["All", "Cloud & AWS", "DevSecOps & CI/CD", "Security & Networking", "Monitoring & Tools"],
     items: [
-      // Cloud & DevOps
-      { name: "AWS Amplify", category: "Cloud & DevOps", level: 95, icon: "aws", highlight: true },
-      { name: "AWS Lambda", category: "Cloud & DevOps", level: 90, icon: "aws", highlight: true },
-      { name: "Amazon S3 & CloudFront", category: "Cloud & DevOps", level: 95, icon: "aws", highlight: true },
-      { name: "Amazon DynamoDB", category: "Cloud & DevOps", level: 85, icon: "aws" },
-      { name: "Amazon API Gateway", category: "Cloud & DevOps", level: 90, icon: "aws" },
-      { name: "Docker & Containers", category: "Cloud & DevOps", level: 85, icon: "docker" },
-      { name: "CI/CD Pipelines", category: "Cloud & DevOps", level: 90, icon: "git" },
+      // Cloud & AWS
+      { name: "AWS VPC Networking", category: "Cloud & AWS", level: 96, highlight: true },
+      { name: "AWS Solutions Architecture", category: "Cloud & AWS", level: 95, highlight: true },
+      { name: "AWS Amplify Hosting", category: "Cloud & AWS", level: 92, highlight: true },
+      { name: "EC2 & Bastion Hosts", category: "Cloud & AWS", level: 94, highlight: true },
+      { name: "NAT Gateways & IGW", category: "Cloud & AWS", level: 90 },
+      { name: "Amazon CloudFront & S3", category: "Cloud & AWS", level: 92 },
+      { name: "AWS IAM & Least Privilege", category: "Cloud & AWS", level: 94, highlight: true },
 
-      // Backend & APIs
-      { name: "Node.js & Express", category: "Backend & APIs", level: 92, icon: "nodejs", highlight: true },
-      { name: "Python", category: "Backend & APIs", level: 88, icon: "python" },
-      { name: "RESTful & GraphQL APIs", category: "Backend & APIs", level: 90, icon: "api" },
-      { name: "Microservices", category: "Backend & APIs", level: 85, icon: "server" },
+      // DevSecOps & CI/CD
+      { name: "Terraform (IaC)", category: "DevSecOps & CI/CD", level: 92, highlight: true },
+      { name: "Jenkins CI/CD Automation", category: "DevSecOps & CI/CD", level: 90, highlight: true },
+      { name: "Docker & Containerization", category: "DevSecOps & CI/CD", level: 90 },
+      { name: "SonarQube (SAST)", category: "DevSecOps & CI/CD", level: 88, highlight: true },
+      { name: "OWASP ZAP (DAST)", category: "DevSecOps & CI/CD", level: 86, highlight: true },
+      { name: "Trivy Container Scanning", category: "DevSecOps & CI/CD", level: 88 },
 
-      // Frontend & UI
-      { name: "Modern JavaScript (ES6+)", category: "Frontend & UI", level: 95, icon: "js", highlight: true },
-      { name: "HTML5 & Semantic Web", category: "Frontend & UI", level: 98, icon: "html" },
-      { name: "Modern CSS3 & Flex/Grid", category: "Frontend & UI", level: 94, icon: "css" },
-      { name: "Responsive & Accessible UX", category: "Frontend & UI", level: 92, icon: "ui" },
+      // Security & Networking
+      { name: "NACLs & Security Groups", category: "Security & Networking", level: 95, highlight: true },
+      { name: "Subnetting (CIDR 10.0.0.0/16)", category: "Security & Networking", level: 94 },
+      { name: "Vulnerability Assessment", category: "Security & Networking", level: 90 },
+      { name: "Linux Administration & Bash", category: "Security & Networking", level: 92 },
+      { name: "SSH Hardening & Key Pair Mgmt", category: "Security & Networking", level: 90 },
 
-      // Databases & Tools
-      { name: "PostgreSQL & SQL", category: "Databases & Tools", level: 86, icon: "db" },
-      { name: "Git & GitHub", category: "Databases & Tools", level: 94, icon: "git" },
-      { name: "Linux & Bash / Shell", category: "Databases & Tools", level: 88, icon: "terminal" },
-      { name: "CloudWatch & Monitoring", category: "Databases & Tools", level: 82, icon: "aws" }
+      // Monitoring & Tools
+      { name: "Prometheus", category: "Monitoring & Tools", level: 88, highlight: true },
+      { name: "Grafana Dashboards", category: "Monitoring & Tools", level: 90, highlight: true },
+      { name: "Git & GitHub", category: "Monitoring & Tools", level: 92 },
+      { name: "CloudWatch Telemetry", category: "Monitoring & Tools", level: 86 }
     ]
   },
 
   projects: [
+    {
+      id: "securedevops",
+      title: "SecureDevOps: Automated CI/CD & Security Compliance Pipeline",
+      category: "DevSecOps",
+      shortDesc: "End-to-end DevSecOps platform automating AWS infrastructure with Terraform, Jenkins CI/CD, SonarQube SAST, OWASP ZAP DAST, Trivy container audit, and Prometheus/Grafana monitoring.",
+      fullDesc: "Engineered as part of the CDAC PGCP ITISS program. This production-grade DevSecOps platform integrates security testing directly into the deployment lifecycle. It automates AWS cloud provisioning using Terraform, orchestrates builds via Jenkins, enforces static code quality gates with SonarQube, performs dynamic web scans with OWASP ZAP, scans Docker container layers for CVEs with Trivy, and provides real-time application and infrastructure telemetry through Prometheus and Grafana dashboards.",
+      architecture: [
+        "Terraform Infrastructure as Code (IaC) for automated AWS provisioning",
+        "Jenkins multibranch automated CI/CD build & test pipeline",
+        "Static Application Security Testing (SAST) with SonarQube quality gates",
+        "Dynamic Application Security Testing (DAST) using OWASP ZAP automated scans",
+        "Container vulnerability scanning with Trivy prior to Docker image deployment",
+        "Real-time monitoring and alerting metrics with Prometheus & Grafana"
+      ],
+      tags: ["AWS Cloud", "Terraform", "Jenkins", "SonarQube", "OWASP ZAP", "Trivy", "Docker", "Prometheus", "Grafana"],
+      image: "assets/images/project-devsecops.svg",
+      liveUrl: "https://github.com/Sec-DO/Automated-CI-CD-and-Security-Compliance-Pipeline-for-Cloud-Applications",
+      repoUrl: "https://github.com/Sec-DO/Automated-CI-CD-and-Security-Compliance-Pipeline-for-Cloud-Applications",
+      featured: true
+    },
+    {
+      id: "aws-vpc",
+      title: "Secure AWS VPC Architecture for Web Application Deployment",
+      category: "Cloud Security",
+      shortDesc: "High-security multi-tier AWS VPC with public and private subnets, Bastion Host SSH ingress, NAT Gateway outbound internet routing, and strict NACL/Security Group rules.",
+      fullDesc: "Designed and implemented a secure AWS Virtual Private Cloud (VPC) optimized for production web workloads. The architecture separates public web tiers from isolated private database tiers across distinct subnets (CIDR 10.0.0.0/16). A Bastion Host in the public subnet provides hardened, single-entry SSH management, while an AWS NAT Gateway ensures private instances can pull critical security patches without exposing inbound ports to the public internet.",
+      architecture: [
+        "Dual-tier subnet architecture (Public 10.0.1.0/24 & Private 10.0.2.0/24)",
+        "Hardened Bastion Host in public subnet for secure SSH administrative jump",
+        "AWS NAT Gateway for controlled, outbound-only internet connectivity",
+        "Internet Gateway (IGW) attached to public route tables",
+        "Stateful Security Groups and Stateless Network Access Control Lists (NACLs)"
+      ],
+      tags: ["AWS VPC", "Public/Private Subnets", "Bastion Host", "NAT Gateway", "Security Groups", "NACLs", "EC2"],
+      image: "assets/images/project-vpc.svg",
+      liveUrl: "#aws-vpc",
+      repoUrl: "https://github.com/Sec-DO",
+      featured: true
+    },
+    {
+      id: "aws-cloudshell-portfolio",
+      title: "AWS CloudShell Interactive Portfolio (Amplify Deployed)",
+      category: "Creative",
+      shortDesc: "This personal portfolio site featuring an interactive terminal emulator, synthesized Web Audio, and automated AWS Amplify CI/CD hosting.",
+      fullDesc: "Engineered specifically for the AWS Portfolio Challenge. Features a custom-built Web Audio and Canvas-powered AWS CloudShell terminal emulator, zero-dependency 100/100 Lighthouse performance, and continuous deployment via AWS Amplify Hosting connected to Amazon CloudFront.",
+      architecture: [
+        "AWS Amplify Hosting with automated Git CI/CD branch deployments",
+        "Amazon CloudFront edge delivery with global low latency (<100ms TTFB)",
+        "Zero-dependency semantic HTML5, high-performance CSS, and vanilla JS",
+        "Synthesized Web Audio API sound effects and Matrix canvas mode"
+      ],
+      tags: ["AWS Amplify", "CloudFront", "Terminal Emulator", "Vanilla JS", "Canvas"],
+      image: "assets/images/project-portfolio.svg",
+      liveUrl: "#",
+      repoUrl: "https://github.com/Sec-DO",
+      featured: true
+    },
     {
       id: "cloudpulse",
       title: "CloudPulse - Serverless Telemetry & Monitoring",
@@ -103,75 +206,21 @@ window.PORTFOLIO_CONFIG = {
       tags: ["AWS Lambda", "DynamoDB", "Amplify", "API Gateway", "Chart.js"],
       image: "assets/images/project-cloudpulse.svg",
       liveUrl: "#cloudpulse",
-      repoUrl: "https://github.com",
-      featured: true
-    },
-    {
-      id: "nexus-ai",
-      title: "NexusAI - Serverless Knowledge Base & RAG Assistant",
-      category: "Full-Stack",
-      shortDesc: "Intelligent document retrieval and conversational query system backed by cloud vector storage and AI models.",
-      fullDesc: "NexusAI empowers users to query technical documentation in natural language. Built using serverless orchestration, documents are ingested into Amazon S3, indexed with semantic embeddings, and queried via a lightweight, ultra-responsive web frontend.",
-      architecture: [
-        "Amazon S3 for secure document bucket storage",
-        "AWS Lambda python workers for chunking and tokenization",
-        "Vector search engine with sub-second retrieval latency",
-        "Responsive glassmorphic UI with real-time stream rendering"
-      ],
-      tags: ["Python", "AWS S3", "Serverless", "REST API", "AI/ML"],
-      image: "assets/images/project-nexus.svg",
-      liveUrl: "#nexus-ai",
-      repoUrl: "https://github.com",
-      featured: true
-    },
-    {
-      id: "omniflow",
-      title: "OmniFlow - Cloud Microservices Checkout Engine",
-      category: "Cloud",
-      shortDesc: "High-throughput, decoupled order processing pipeline capable of handling high concurrency spikes gracefully.",
-      fullDesc: "OmniFlow is a fault-tolerant order orchestration engine. By decoupling the transaction intake from payment processing using Amazon SQS queues and asynchronous worker Lambdas, it achieves 99.99% availability and zero dropped transactions during traffic surges.",
-      architecture: [
-        "Amazon SQS dead-letter queues for zero message loss",
-        "AWS Lambda consumer functions running in parallel",
-        "Idempotent database transactions backed by PostgreSQL",
-        "Full CloudWatch dashboard monitoring queue depth and error rates"
-      ],
-      tags: ["Microservices", "Amazon SQS", "AWS Lambda", "Node.js", "Docker"],
-      image: "assets/images/project-omniflow.svg",
-      liveUrl: "#omniflow",
-      repoUrl: "https://github.com",
-      featured: true
-    },
-    {
-      id: "aws-cloudshell-portfolio",
-      title: "AWS CloudShell Interactive Portfolio",
-      category: "Creative",
-      shortDesc: "This personal portfolio site featuring an interactive terminal emulator, AWS CI/CD simulation, and live cloud hosting.",
-      fullDesc: "Engineered specifically for the AWS Portfolio Challenge. Features a custom-built Web Audio and Canvas-powered AWS CloudShell terminal emulator, zero-dependency 100/100 Lighthouse performance, and continuous deployment via AWS Amplify Hosting.",
-      architecture: [
-        "AWS Amplify Hosting with automated Git CI/CD branch deployments",
-        "Amazon CloudFront edge delivery with global low latency",
-        "Zero-dependency semantic HTML5, high-performance CSS, and vanilla JS",
-        "Synthesized Web Audio API sound effects and Matrix canvas mode"
-      ],
-      tags: ["AWS Amplify", "CloudFront", "Terminal Emulator", "Vanilla JS", "Canvas"],
-      image: "assets/images/project-portfolio.svg",
-      liveUrl: "#",
-      repoUrl: "https://github.com",
+      repoUrl: "https://github.com/Sec-DO",
       featured: true
     }
   ],
 
   terminal: {
-    user: "builder",
+    user: "rahul",
     host: "aws-cloudshell",
     region: "us-east-1",
     version: "2.4.0-amplify",
     easterEggs: {
-      motto: "Fail fast, learn faster, and let AWS Lambda handle the concurrency.",
-      favoriteTech: "AWS Lambda + DynamoDB + Vanilla JS for pure speed.",
-      superpower: "Debugging race conditions at 2:00 AM with a warm mug of chai.",
-      funFact: "I can name the AWS logo smile angle (it's 20° connecting A to Z!)."
+      motto: "Security isn't an afterthought—it's the foundation of every scalable cloud architecture.",
+      favoriteTech: "AWS VPC + Terraform + Jenkins + Prometheus for rock-solid DevSecOps.",
+      superpower: "Eliminating CVE vulnerabilities and hardening AWS network ACLs before production release.",
+      funFact: "Double AWS Certified: SAA-C03 (Solutions Architect Associate) & CLF-C02 (Cloud Practitioner) valid through 2029!"
     }
   }
 };

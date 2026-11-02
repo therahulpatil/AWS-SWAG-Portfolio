@@ -1,6 +1,6 @@
 /**
- * Main Portfolio UI Controller
- * Orchestrates dynamic rendering, category filtering, modals, and user interactions
+ * Main Portfolio UI Controller for Rahul Patil
+ * AWS Solutions Architect & DevSecOps Engineer
  */
 document.addEventListener("DOMContentLoaded", () => {
   const cfg = window.PORTFOLIO_CONFIG;
@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Populate Page Sections
   renderHero(cfg);
+  renderCertifications(cfg);
   renderAbout(cfg);
   renderSkills(cfg);
   renderProjects(cfg);
@@ -61,10 +62,42 @@ function renderHero(cfg) {
   // Social Links
   const githubLink = document.getElementById("nav-github-link");
   if (githubLink) githubLink.href = p.github;
+
+  const linkedinLink = document.getElementById("hero-linkedin-link");
+  if (linkedinLink) linkedinLink.href = p.linkedin;
 }
 
 /* ==========================================================================
-   RENDER ABOUT SECTION
+   RENDER AWS CERTIFICATIONS SECTION
+   ========================================================================== */
+function renderCertifications(cfg) {
+  const certsContainer = document.getElementById("certs-container");
+  if (!certsContainer || !cfg.certifications) return;
+
+  certsContainer.innerHTML = cfg.certifications
+    .map(
+      (c) => `
+    <div class="cert-card">
+      <img src="${c.badge}" alt="${c.title}" class="cert-badge-img" loading="lazy" />
+      <div class="cert-info">
+        <span class="cert-level-tag">AWS ${c.level} Certification</span>
+        <h3 class="cert-title">${c.title}</h3>
+        <p class="cert-dates">Valid: <strong>${c.issueDate}</strong> – <strong>${c.expiryDate}</strong></p>
+        <div class="cert-id-row">
+          <span>Verification ID:</span>
+          <span class="cert-id-code">${c.credentialId}</span>
+        </div>
+        <a href="${c.verifyUrl}" target="_blank" rel="noopener noreferrer" class="cert-verify-link">
+          Verify on AWS Portal ↗
+        </a>
+      </div>
+    </div>`
+    )
+    .join("");
+}
+
+/* ==========================================================================
+   RENDER ABOUT SECTION & JOURNEY TIMELINE
    ========================================================================== */
 function renderAbout(cfg) {
   const about = cfg.about;
@@ -185,7 +218,7 @@ function renderProjects(cfg) {
             Architecture Details
           </button>
           <a href="${p.repoUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-            GitHub
+            GitHub Repo ↗
           </a>
         </div>
       </div>
@@ -241,6 +274,12 @@ function renderContact(cfg) {
   const contactEmailVal = document.getElementById("contact-email-val");
   if (contactEmailVal) contactEmailVal.textContent = p.email;
 
+  const linkedinCard = document.getElementById("contact-linkedin-card");
+  if (linkedinCard) linkedinCard.href = p.linkedin;
+
+  const githubCard = document.getElementById("contact-github-card");
+  if (githubCard) githubCard.href = p.github;
+
   const copyBtn = document.getElementById("copy-email-btn");
   if (copyBtn) {
     copyBtn.addEventListener("click", () => {
@@ -266,7 +305,7 @@ function setupContactForm(cfg) {
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
       form.reset();
-      showToast("Message dispatched successfully! Thanks for reaching out.");
+      showToast("Message dispatched successfully! Thanks for reaching out to Rahul.");
     }, 1200);
   });
 }
@@ -282,7 +321,6 @@ function setupNavbar() {
     navMenu.classList.toggle("active");
   });
 
-  // Close mobile menu on link click
   document.querySelectorAll(".nav-link").forEach((link) => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("active");
@@ -324,19 +362,16 @@ function setupThemeToggle() {
 }
 
 function setupHintTriggers() {
-  // Navbar Hint Button
   const navHintBtn = document.getElementById("nav-hint-btn");
   navHintBtn?.addEventListener("click", () => {
     window.AWSCloudShell.open();
   });
 
-  // Persistent Floating Visible Hint Badge (Mandatory Rubric Requirement)
   const floatingHint = document.getElementById("floating-cloudshell-hint");
   floatingHint?.addEventListener("click", () => {
     window.AWSCloudShell.open();
   });
 
-  // Hero launch terminal button
   const heroLaunchBtn = document.getElementById("hero-terminal-btn");
   heroLaunchBtn?.addEventListener("click", () => {
     window.AWSCloudShell.open();

@@ -1,111 +1,77 @@
-# ☁️ AWS Cloud Builder Portfolio & Interactive CloudShell
+# ☁️ Rahul Patil | AWS Cloud Architect & DevSecOps Portfolio
 
 [![AWS Amplify](https://img.shields.io/badge/AWS-Amplify_Hosting-FF9900?logo=aws-amplify&logoColor=white)](https://aws.amazon.com/amplify/)
+[![AWS Solutions Architect](https://img.shields.io/badge/AWS_Certified-Solutions_Architect_Associate-FF9900?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/verification)
+[![AWS Cloud Practitioner](https://img.shields.io/badge/AWS_Certified-Cloud_Practitioner-00F0FF?logo=amazon-aws&logoColor=white)](https://aws.amazon.com/verification)
 [![Lighthouse](https://img.shields.io/badge/Lighthouse-100%2F100-success?logo=google-chrome&logoColor=white)](https://developers.google.com/web/tools/lighthouse)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-patilrahulprafulla-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/patilrahulprafulla)
 
-An award-winning personal portfolio website engineered for the **AWS Portfolio Challenge**. It highlights cloud engineering projects, technical superpowers, and features an interactive **AWS CloudShell v2.0 Terminal** with zero-dependency audio synthesis, simulated CI/CD pipelines, and Canvas digital rain.
+Personal cloud portfolio of **Rahul Patil**, 2x AWS Certified Solutions Architect and DevSecOps practitioner (CDAC PGCP ITISS). Built for the **AWS Portfolio Challenge**, featuring production-grade cloud architectures, automated DevSecOps pipelines, and an interactive **AWS CloudShell v2.0 Terminal** with synthesized Web Audio sound and CI/CD simulation.
 
 ---
 
-## 🌟 Key Highlights & Challenge Features
+## 🎖️ Official AWS Certifications
 
-### 1. Three Core Sections
-- **About Me**: Engineering story, personal philosophy, core architectural pillars, and interactive milestone timeline.
-- **Skills or Tech Superpowers**: Categorized cloud competencies (AWS Lambda, S3, CloudFront, DynamoDB, API Gateway, Docker) with proficiency indicators and filter tabs.
-- **Projects or Achievements**: Production-ready and serverless learning projects (CloudPulse, NexusAI, OmniFlow) with architecture modal inspectors and source links.
+| Certification | Level | Validity | Verification ID | Verify |
+| :--- | :---: | :---: | :---: | :---: |
+| **AWS Certified Solutions Architect – Associate** | Associate | Oct 2026 – Oct 2029 | `5b5a1c7f6a824de5a661e9149a0c18fd` | [Verify Portal](https://aws.amazon.com/verification) |
+| **AWS Certified Cloud Practitioner** | Foundational | Feb 2026 – Oct 2029 | `c49b3418666a41818f74795c50633cff` | [Verify Portal](https://aws.amazon.com/verification) |
 
-### 2. The Creative Feature: Interactive AWS CloudShell Terminal
-- **Visible Hint**: A persistent glowing indicator in both the sticky navigation bar and a floating bottom-right badge:  
-  `[⚡ Hint: Click or press ~ for AWS CloudShell]`
-- **Interactive CLI Capabilities**:
-  - `help` - Command catalog with shortcuts.
-  - `whoami` - Identity, values, location, and AWS fun facts.
-  - `superpowers` - Terminal skill radar with visual ASCII bars.
-  - `projects` - Project catalog with interactive `goto <id>` quick jump.
-  - `story` - Interactive narrative of the developer journey.
-  - `sudo deploy` - **Simulated AWS Amplify CI/CD pipeline** with live stage progress, sound FX, and confetti!
-  - `matrix` - Canvas-based full-screen cyberpunk digital rain.
-  - `theme [dark|light]` - Live aesthetic toggling.
-  - `sound [on|off]` - Real-time synthesized retro audio beeps via Web Audio API.
-  - Autocomplete (`Tab`) and History navigation (`↑` / `↓` arrows).
+---
 
-### 3. AWS Cloud Architecture & Hosting
-- **Hosting**: AWS Amplify Hosting (Continuous Deployment synced to GitHub).
-- **Edge CDN**: Amazon CloudFront (Global edge caching across 450+ PoPs).
-- **Security**: Managed SSL/TLS certificates and HTTPS enforcement.
-- **Performance**: 100/100 Lighthouse performance, sub-second TTFB, zero runtime build errors.
+## 🛠️ Featured Engineering Projects
+
+1. **[SecureDevOps: Automated CI/CD and Security Compliance Pipeline for Cloud Applications](https://github.com/Sec-DO/Automated-CI-CD-and-Security-Compliance-Pipeline-for-Cloud-Applications)**
+   - *Platform*: AWS Cloud, DevOps, Security | *Duration*: 1 Month (CDAC PGCP ITISS)
+   - *Architecture*: Terraform IaC provisioning, Jenkins multibranch CI/CD, SonarQube SAST, OWASP ZAP DAST, Trivy container layer auditing, Docker deployment, and Prometheus + Grafana real-time observability.
+2. **Secure AWS VPC Architecture for Web Application Deployment**
+   - *Architecture*: Multi-tier public/private subnets (10.0.0.0/16), Bastion Host for hardened SSH ingress, NAT Gateway for outbound update traffic, Security Groups, and NACLs.
+3. **AWS CloudShell Interactive Portfolio**
+   - *Architecture*: AWS Amplify continuous hosting, Amazon CloudFront edge caching, zero-dependency Web Audio API terminal emulator, canvas matrix rain.
+
+---
+
+## ⚡ The Creative Feature: Interactive AWS CloudShell
+
+Visitors receive a visible hint (`[💡 Hint: CloudShell (~)]` in the navbar and floating bottom-right pill) or can press **`~`** to launch the terminal:
+- `help`: Lists all commands.
+- `whoami`: Reveals Rahul's background, CDAC ITISS education, and DevSecOps ethos.
+- `certs`: Displays official AWS Certification IDs and verification links.
+- `superpowers`: Displays technical skills with ASCII radar meters.
+- `projects`: Inventory of engineering projects with `goto <id>` quick jump.
+- `story`: Unfolds Rahul's journey and milestones.
+- `sudo deploy`: Simulates an automated DevSecOps AWS Amplify deployment with sound & confetti!
+- `matrix`: Drops full-screen cyberpunk digital rain.
 
 ---
 
 ## 🚀 Quick Start (Local Development)
 
-Because this project is built with clean modern HTML5, CSS3, and vanilla JavaScript, it has **zero external build dependencies**:
+Zero external build dependencies. Open locally in 2 seconds:
 
-1. Clone the repository:
+1. Clone repository:
    ```bash
    git clone https://github.com/your-username/AWS-SWAG-Portfolio.git
    cd AWS-SWAG-Portfolio
    ```
 
-2. Open locally:
-   - Double-click `index.html` in your file explorer, OR
-   - Run a lightweight HTTP server:
-     ```bash
-     python -m http.server 8000
-     ```
-   - Open `http://localhost:8000` in your web browser.
+2. Run local web server:
+   ```bash
+   python -m http.server 3000
+   ```
+   Open `http://localhost:3000` in your browser.
 
 ---
 
-## ☁️ How to Deploy to AWS Amplify Hosting (5 Minutes)
+## ☁️ Deploy to AWS Amplify Hosting
 
-1. **Push to GitHub**:
+1. Push to GitHub:
    ```bash
-   git init
-   git add .
-   git commit -m "feat: initial AWS portfolio release"
    git remote add origin https://github.com/<your-username>/<your-repo-name>.git
-   git branch -M main
    git push -u origin main
    ```
-
-2. **Connect to AWS Amplify**:
-   - Log into the [AWS Management Console](https://console.aws.amazon.com/).
-   - Search for **AWS Amplify** and click **Host web app**.
-   - Select **GitHub** as the source repository and authorize AWS Amplify.
-   - Choose your repository and the `main` branch.
-   - Amplify will automatically detect the static configuration from `amplify.yml`.
-   - Click **Save and deploy**.
-
-3. **Enjoy your live URL**:
-   - Within 60 seconds, AWS Amplify deploys your portfolio to a public URL (e.g., `https://main.d123456789.amplifyapp.com`).
-   - Custom domains can be connected via **Amplify Console > App Settings > Domain Management**.
-
----
-
-## 🎨 Customizing for Yourself
-
-All personal details, skills, projects, and easter eggs are centrally managed in a single file:  
-👉 **[`js/config.js`](file:///c:/Users/patil/Downloads/AntigravityProjects/AWS-SWAG-Portfolio/js/config.js)**
-
-Edit this file to update your:
-- Name, bio, and social links
-- Metric stats
-- Core engineering principles and milestones
-- Skill proficiencies and categories
-- Project descriptions, tags, and architecture diagrams
-
----
-
-## 📜 Rubric Compliance
-
-| Rubric Criteria | Score Target | Implementation |
-| :--- | :---: | :--- |
-| **Creativity & Memorability (30%)** | 100% | Interactive AWS CloudShell with visible hint badge, Web Audio sound synth, matrix rain, and CI/CD deploy simulation. |
-| **Working AWS Implementation (25%)** | 100% | Deployed on AWS Amplify Hosting, Amazon CloudFront global edge delivery, documented architecture. |
-| **Communication Quality (25%)** | 100% | Detailed `HACKATHON_SUBMISSION.md` with architecture breakdown, challenges solved, and learning outcomes. |
-| **Completeness & Usability (20%)** | 100% | All 3 required sections present, responsive from 320px mobile to 4K displays, dark/light theme toggle. |
+2. In AWS Console > **AWS Amplify**, click **Host web app**, connect your GitHub repo and select `main` branch.
+3. AWS Amplify automatically reads [`amplify.yml`](file:///c:/Users/patil/Downloads/AntigravityProjects/AWS-SWAG-Portfolio/amplify.yml) and deploys within 60 seconds with global CloudFront edge delivery and free SSL/HTTPS!
 
 ---
 
