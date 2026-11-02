@@ -567,8 +567,9 @@ body::after {
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 15%;
+  object-position: center center;
   border: 4px solid var(--bg-primary);
+  background-color: #ffffff;
   filter: contrast(1.03);
 }
 
