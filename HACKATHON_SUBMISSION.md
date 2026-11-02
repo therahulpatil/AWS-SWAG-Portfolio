@@ -11,7 +11,8 @@
 > **LinkedIn:** [https://www.linkedin.com/in/patilrahulprafulla](https://www.linkedin.com/in/patilrahulprafulla)  
 > **Featured Project GitHub:** [Automated-CI-CD-and-Security-Compliance-Pipeline-for-Cloud-Applications](https://github.com/Sec-DO/Automated-CI-CD-and-Security-Compliance-Pipeline-for-Cloud-Applications)  
 > **Portfolio GitHub Repository:** [https://github.com/therahulpatil/AWS-SWAG-Portfolio](https://github.com/therahulpatil/AWS-SWAG-Portfolio)  
-> **Live AWS URL:** `https://main.dXXXXXXXXX.amplifyapp.com` *(Replace with your live AWS Amplify URL after deploying)*  
+> **Live AWS Custom Domain:** [https://therahulpatil.in](https://therahulpatil.in) (also accessible at [https://www.therahulpatil.in](https://www.therahulpatil.in))  
+> **AWS Amplify Live URL:** `https://main.dXXXXXXXXX.amplifyapp.com`  
 > **Track:** AWS Student & Builder Portfolio Challenge  
 
 ---

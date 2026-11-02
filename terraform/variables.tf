@@ -16,6 +16,18 @@ variable "environment" {
   default     = "prod"
 }
 
+variable "domain_name" {
+  description = "Custom domain name managed in AWS Route 53"
+  type        = string
+  default     = "therahulpatil.in"
+}
+
+variable "enable_custom_domain" {
+  description = "Whether to provision ACM certificate, Route 53 DNS records, and CloudFront custom domain aliases"
+  type        = bool
+  default     = true
+}
+
 variable "enable_amplify" {
   description = "Whether to provision an AWS Amplify App in addition to / instead of S3 + CloudFront"
   type        = bool
@@ -45,5 +57,6 @@ variable "tags" {
     Company     = "HeapTrace Technologies"
     ManagedBy   = "Terraform"
     Environment = "Production"
+    Domain      = "therahulpatil.in"
   }
 }

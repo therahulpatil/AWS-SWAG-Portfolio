@@ -52,3 +52,24 @@ resource "aws_amplify_branch" "main" {
 
   tags = var.tags
 }
+
+
+# Custom Domain Association for AWS Amplify
+resource "aws_amplify_domain_association" "domain" {
+  count = var.enable_amplify && var.enable_custom_domain ? 1 : 0
+
+  app_id      = aws_amplify_app.portfolio[0].id
+  domain_name = var.domain_name
+
+  # Apex domain: therahulpatil.in
+  sub_domain {
+    branch_name = aws_amplify_branch.main[0].branch_name
+    prefix      = ""
+  }
+
+  # Subdomain: www.therahulpatil.in
+  sub_domain {
+    branch_name = aws_amplify_branch.main[0].branch_name
+    prefix      = "www"
+  }
+}

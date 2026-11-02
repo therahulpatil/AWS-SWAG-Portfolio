@@ -1,4 +1,4 @@
-# AWS Region
+# AWS Region (Note: ACM Certificate for CloudFront is automatically provisioned in us-east-1)
 aws_region = "us-east-1"
 
 # Project Identifier
@@ -6,6 +6,10 @@ project_name = "rahul-patil-portfolio"
 
 # Environment
 environment = "prod"
+
+# Custom Domain Configuration (Route 53 Hosted Zone + ACM SSL/TLS)
+domain_name          = "therahulpatil.in"
+enable_custom_domain = true
 
 # Set to true if you want to also provision an AWS Amplify App via Terraform
 enable_amplify = false
@@ -22,4 +26,5 @@ tags = {
   Company     = "HeapTrace Technologies"
   ManagedBy   = "Terraform"
   Environment = "Production"
+  Domain      = "therahulpatil.in"
 }

@@ -118,6 +118,8 @@ resource "aws_cloudfront_distribution" "cdn" {
   comment             = "Global CDN for ${var.project_name} [${var.environment}]"
   price_class         = "PriceClass_100"
 
+  aliases = var.enable_custom_domain ? [var.domain_name, "www.${var.domain_name}"] : []
+
   origin {
     domain_name              = aws_s3_bucket.portfolio.bucket_regional_domain_name
     origin_id                = "S3-${aws_s3_bucket.portfolio.id}"
@@ -158,7 +160,10 @@ resource "aws_cloudfront_distribution" "cdn" {
   }
 
   viewer_certificate {
-    cloudfront_default_certificate = true
+    cloudfront_default_certificate = var.enable_custom_domain ? false : true
+    acm_certificate_arn            = var.enable_custom_domain ? aws_acm_certificate_validation.cert[0].certificate_arn : null
+    ssl_support_method             = var.enable_custom_domain ? "sni-only" : null
+    minimum_protocol_version       = var.enable_custom_domain ? "TLSv1.2_2021" : "TLSv1"
   }
 }
 

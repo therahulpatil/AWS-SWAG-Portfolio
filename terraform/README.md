@@ -1,6 +1,6 @@
-# 🏗️ Terraform Infrastructure as Code: AWS Portfolio Deployment
+# 🏗️ Terraform Infrastructure as Code: AWS Portfolio & Custom Domain Deployment
 
-Enterprise-grade Terraform modules engineered by **Rahul Patil** (DevOps Engineer Associate at **HeapTrace Technologies**) to deploy this portfolio to Amazon Web Services with high availability, security headers, and zero public S3 bucket exposure.
+Enterprise-grade Terraform modules engineered by **Rahul Patil** (DevOps Engineer Associate at **HeapTrace Technologies**) to deploy this portfolio to Amazon Web Services with **Route 53 DNS**, **AWS Certificate Manager (ACM) SSL/TLS**, and **CloudFront CDN** with zero public S3 bucket exposure.
 
 ---
 
@@ -9,12 +9,25 @@ Enterprise-grade Terraform modules engineered by **Rahul Patil** (DevOps Enginee
 ```
                                 [ End Users Worldwide ]
                                            │
+                        https://therahulpatil.in & www.therahulpatil.in
+                                           │
+                                           ▼
+                       ┌────────────────────────────────────────┐
+                       │           AWS Route 53 DNS             │
+                       │   - Hosted Zone: therahulpatil.in      │
+                       │   - Apex 'A' & 'AAAA' Alias Records    │
+                       │   - 'www' 'A' & 'AAAA' Alias Records   │
+                       │   - CNAME DNS Validation for ACM Cert  │
+                       └───────────────────┬────────────────────┘
+                                           │
                                     (HTTPS Port 443)
                                            ▼
                        ┌────────────────────────────────────────┐
                        │   Amazon CloudFront CDN Distribution    │
+                       │   - Custom Domain: therahulpatil.in    │
+                       │   - AWS Certificate Manager (ACM) SSL  │
                        │   - Global Edge Caching (450+ PoPs)     │
-                       │   - Managed SSL/TLS Certificate         │
+                       │   - TLSv1.2_2021 Security Policy       │
                        │   - Gzip & Brotli Auto-Compression      │
                        │   - Strict Security Headers (HSTS, CSP) │
                        │   - Custom 403/404 SPA Error Rewrites   │
@@ -40,10 +53,11 @@ Enterprise-grade Terraform modules engineered by **Rahul Patil** (DevOps Enginee
 ```
 terraform/
 ├── main.tf                  # S3 Bucket, CloudFront OAC, CDN Distribution, Security Headers & Policies
+├── dns_acm.tf               # Route 53 Zone lookup, ACM Certificate, DNS validation & Alias A/AAAA records
 ├── s3_upload.tf             # Automated S3 file upload with MIME type mapping and MD5 etags
-├── amplify.tf               # Alternative/optional AWS Amplify App Terraform resource
-├── variables.tf             # Configurable input variables (region, project_name, tags)
-├── outputs.tf               # Live website URL, CloudFront ID, and S3 Bucket ARN
+├── amplify.tf               # Alternative/optional AWS Amplify App & Custom Domain Terraform resource
+├── variables.tf             # Configurable input variables (domain_name = "therahulpatil.in", region, tags)
+├── outputs.tf               # Live website URL, CloudFront ID, ACM ARN, and Route 53 Zone ID
 ├── terraform.tfvars.example  # Example variable definitions
 └── README.md                # Deployment walkthrough & verification guide
 ```
@@ -61,6 +75,7 @@ terraform/
    ```bash
    terraform version
    ```
+3. Existing **Route 53 Hosted Zone** for `therahulpatil.in`.
 
 ### 1. Initialize Working Directory
 Navigate into the `terraform` folder and initialize the required AWS and Random providers:
@@ -74,7 +89,7 @@ Copy the example variables file:
 ```bash
 cp terraform.tfvars.example terraform.tfvars
 ```
-*(Optional)* Customize `aws_region` or `project_name` in `terraform.tfvars`.
+Verify `domain_name = "therahulpatil.in"` and `enable_custom_domain = true`.
 
 ### 3. Review Execution Plan
 Run a dry-run plan to inspect the resources that will be provisioned:
@@ -83,7 +98,7 @@ terraform plan
 ```
 
 ### 4. Deploy Infrastructure
-Apply the configuration to provision the S3 bucket, CloudFront distribution, security policies, and automatically upload all website files:
+Apply the configuration to provision the S3 bucket, request & validate the ACM SSL certificate, configure Route 53 alias records, and deploy CloudFront:
 ```bash
 terraform apply -auto-approve
 ```
@@ -92,38 +107,43 @@ terraform apply -auto-approve
 
 ## 📊 Deployment Outputs
 
-Upon completion, Terraform will output your live URL:
+Upon completion, Terraform will output your live custom domain URL:
 ```text
-Apply complete! Resources: 14 added, 0 changed, 0 destroyed.
+Apply complete! Resources: 20 added, 0 changed, 0 destroyed.
 
 Outputs:
 
-cloudfront_distribution_id = "E2XXXXXXXEXAMPLE"
-cloudfront_domain_name     = "d111111abcdef8.cloudfront.net"
-s3_bucket_arn              = "arn:aws:s3:::rahul-patil-portfolio-prod-xyz123"
-s3_bucket_name             = "rahul-patil-portfolio-prod-xyz123"
-website_url                = "https://d111111abcdef8.cloudfront.net"
+acm_certificate_arn    = "arn:aws:acm:us-east-1:XXXXXXXXXXXX:certificate/xxxx-xxxx-xxxx"
+cloudfront_domain_name = "d111111abcdef8.cloudfront.net"
+custom_domain_apex_url = "https://therahulpatil.in"
+custom_domain_www_url  = "https://www.therahulpatil.in"
+route53_hosted_zone_id = "Z0123456789ABCDEF"
+s3_bucket_name         = "rahul-patil-portfolio-prod-xyz123"
+website_url            = "https://therahulpatil.in"
 ```
 
-You can now open the **`website_url`** in any web browser to see your live portfolio!
+You can now open **`https://therahulpatil.in`** in any web browser with secure HTTPS!
 
 ---
 
 ## 🛡️ DevSecOps & Security Hardening Highlights
 
-1. **Defense-in-Depth (Zero Public S3 Access)**:
+1. **Automated ACM DNS Validation**:
+   - Requests a public SSL/TLS certificate for both `therahulpatil.in` and `www.therahulpatil.in`.
+   - Automatically populates the DNS CNAME validation records into the Route 53 hosted zone.
+   - Waits for AWS validation (`aws_acm_certificate_validation`) before attaching to CloudFront.
+
+2. **Defense-in-Depth (Zero Public S3 Access)**:
    - S3 bucket public access is 100% blocked via `aws_s3_bucket_public_access_block`.
    - Direct access to the S3 bucket returns `403 Access Denied`.
    - Access is restricted exclusively to the CloudFront distribution via **Origin Access Control (OAC)** with Signature Version 4 (`sigv4`).
 
-2. **Hardened Security Response Headers**:
+3. **Modern TLS & Security Response Headers**:
+   - Minimum TLS Protocol: `TLSv1.2_2021` with `sni-only`.
    - `Strict-Transport-Security` (HSTS): Enforces 1-year HTTPS preload.
    - `X-Content-Type-Options: nosniff`: Prevents MIME-type sniffing attacks.
    - `X-Frame-Options: SAMEORIGIN`: Prevents clickjacking.
    - `Referrer-Policy: strict-origin-when-cross-origin`: Protects referrer leakage.
-
-3. **Continuous Asset Sync**:
-   - `s3_upload.tf` calculates MD5 file hashes (`filemd5`) so only modified files are uploaded on subsequent `terraform apply` executions.
 
 ---
 
