@@ -25,7 +25,7 @@ variable "enable_amplify" {
 variable "github_repository" {
   description = "GitHub repository URL for AWS Amplify source connection"
   type        = string
-  default     = "https://github.com/Sec-DO/AWS-SWAG-Portfolio"
+  default     = "https://github.com/therahulpatil/AWS-SWAG-Portfolio"
 }
 
 variable "github_access_token" {

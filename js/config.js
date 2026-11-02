@@ -14,7 +14,7 @@ window.PORTFOLIO_CONFIG = {
     email: "patilrahulprafulla@gmail.com",
     location: "India / Open to Global Remote",
     status: "💼 DevOps Engineer Associate @ HeapTrace Technologies | 2x AWS Certified",
-    github: "https://github.com/Sec-DO",
+    github: "https://github.com/therahulpatil",
     linkedin: "https://www.linkedin.com/in/patilrahulprafulla",
     awsBuilder: "https://builder.aws.com",
     resumeUrl: "https://www.linkedin.com/in/patilrahulprafulla"
@@ -195,8 +195,8 @@ window.PORTFOLIO_CONFIG = {
       ],
       tags: ["AWS Amplify", "CloudFront", "Terminal Emulator", "Vanilla JS", "Canvas"],
       image: "assets/images/project-portfolio.svg",
-      liveUrl: "#",
-      repoUrl: "https://github.com/Sec-DO",
+      liveUrl: "https://github.com/therahulpatil/AWS-SWAG-Portfolio",
+      repoUrl: "https://github.com/therahulpatil/AWS-SWAG-Portfolio",
       featured: true
     },
     {

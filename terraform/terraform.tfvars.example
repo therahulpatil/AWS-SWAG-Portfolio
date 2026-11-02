@@ -11,7 +11,7 @@ environment = "prod"
 enable_amplify = false
 
 # GitHub repository details (used if enable_amplify is true)
-github_repository   = "https://github.com/Sec-DO/AWS-SWAG-Portfolio"
+github_repository   = "https://github.com/therahulpatil/AWS-SWAG-Portfolio"
 github_access_token = ""
 
 # Resource Tags

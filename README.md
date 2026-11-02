@@ -73,7 +73,7 @@ Provisions:
 
 1. Push to GitHub:
    ```bash
-   git remote add origin https://github.com/<your-username>/<your-repo-name>.git
+   git remote add origin https://github.com/therahulpatil/AWS-SWAG-Portfolio.git
    git push -u origin main
    ```
 2. In AWS Console > **AWS Amplify**, click **Host web app**, connect your GitHub repo and select `main` branch.

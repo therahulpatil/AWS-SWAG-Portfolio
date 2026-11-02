@@ -10,7 +10,7 @@
 > **Education:** CDAC PGCP ITISS (Aug 2026)  
 > **LinkedIn:** [https://www.linkedin.com/in/patilrahulprafulla](https://www.linkedin.com/in/patilrahulprafulla)  
 > **Featured Project GitHub:** [Automated-CI-CD-and-Security-Compliance-Pipeline-for-Cloud-Applications](https://github.com/Sec-DO/Automated-CI-CD-and-Security-Compliance-Pipeline-for-Cloud-Applications)  
-> **Portfolio GitHub Repository:** [https://github.com/your-username/AWS-SWAG-Portfolio](https://github.com/your-username/AWS-SWAG-Portfolio)  
+> **Portfolio GitHub Repository:** [https://github.com/therahulpatil/AWS-SWAG-Portfolio](https://github.com/therahulpatil/AWS-SWAG-Portfolio)  
 > **Live AWS URL:** `https://main.dXXXXXXXXX.amplifyapp.com` *(Replace with your live AWS Amplify URL after deploying)*  
 > **Track:** AWS Student & Builder Portfolio Challenge  
 
