@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="600" height="340">
+  <defs>
+    <linearGradient id="bgNexus" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B132B" />
+      <stop offset="100%" stop-color="#1C2541" />
+    </linearGradient>
+    <linearGradient id="aiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="50%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#FF9900" />
+    </linearGradient>
+    <filter id="aiGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="340" fill="url(#bgNexus)" rx="12" />
+
+  <!-- Neural Mesh Grid -->
+  <g stroke="#334155" stroke-width="0.8" opacity="0.4">
+    <circle cx="300" cy="170" r="140" fill="none" stroke-dasharray="4 6" />
+    <circle cx="300" cy="170" r="90" fill="none" stroke-dasharray="2 4" />
+    <circle cx="300" cy="170" r="45" fill="none" />
+  </g>
+
+  <!-- Window Header -->
+  <rect x="40" y="25" width="520" height="35" rx="6" fill="#1E293B" opacity="0.9" />
+  <circle cx="60" cy="42" r="4.5" fill="#EF4444" />
+  <circle cx="75" cy="42" r="4.5" fill="#F59E0B" />
+  <circle cx="90" cy="42" r="4.5" fill="#10B981" />
+  <text x="110" y="47" fill="#CBD5E1" font-family="monospace" font-size="11">NexusAI :: Serverless Vector RAG Engine [Embedding Model: Active]</text>
+
+  <!-- Left: Ingestion & Vector Storage -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="140" height="180" rx="8" fill="#131F37" stroke="#3B82F6" stroke-width="1.2" opacity="0.9" />
+    <text x="15" y="25" fill="#93C5FD" font-family="sans-serif" font-size="11" font-weight="bold">SOURCE INGESTION</text>
+    
+    <rect x="15" y="40" width="110" height="30" rx="4" fill="#1E293B" />
+    <text x="25" y="60" fill="#E2E8F0" font-family="monospace" font-size="10">📄 AWS Docs.pdf</text>
+    
+    <rect x="15" y="80" width="110" height="30" rx="4" fill="#1E293B" />
+    <text x="25" y="100" fill="#E2E8F0" font-family="monospace" font-size="10">📦 S3 Vector Bucket</text>
+
+    <rect x="15" y="120" width="110" height="30" rx="4" fill="#1E293B" />
+    <text x="25" y="140" fill="#10B981" font-family="monospace" font-size="10">⚡ Chunked 1536d</text>
+  </g>
+
+  <!-- Center: Neural Core / AI Vector Search -->
+  <g transform="translate(230, 110)">
+    <!-- Hexagon Core -->
+    <polygon points="70,10 130,45 130,115 70,150 10,115 10,45" fill="#1E1B4B" stroke="url(#aiGrad)" stroke-width="3" filter="url(#aiGlow)" />
+    <text x="36" y="80" fill="#00F0FF" font-family="sans-serif" font-weight="bold" font-size="14">VECTOR</text>
+    <text x="36" y="98" fill="#FF9900" font-family="sans-serif" font-weight="bold" font-size="12">EMBEDDING</text>
+    <circle cx="70" cy="80" r="45" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-dasharray="6 3" />
+  </g>
+
+  <!-- Flow Arrows -->
+  <path d="M 195 170 L 235 170" stroke="#00F0FF" stroke-width="2.5" marker-end="url(#arrow)" />
+  <path d="M 375 170 L 415 170" stroke="#FF9900" stroke-width="2.5" />
+
+  <!-- Right: Semantic Query Chat -->
+  <g transform="translate(415, 80)">
+    <rect x="0" y="0" width="145" height="180" rx="8" fill="#131F37" stroke="#FF9900" stroke-width="1.2" opacity="0.9" />
+    <text x="15" y="25" fill="#FDBA74" font-family="sans-serif" font-size="11" font-weight="bold">AI GENERATION</text>
+
+    <rect x="12" y="40" width="120" height="38" rx="4" fill="#1E293B" />
+    <text x="18" y="55" fill="#94A3B8" font-family="sans-serif" font-size="9">Prompt:</text>
+    <text x="18" y="70" fill="#E2E8F0" font-family="sans-serif" font-size="9">"Optimize Lambda cold start?"</text>
+
+    <rect x="12" y="90" width="120" height="60" rx="4" fill="#0F2942" stroke="#00F0FF" stroke-width="0.8" />
+    <text x="18" y="105" fill="#38BDF8" font-family="sans-serif" font-size="9">Synthesized Answer:</text>
+    <text x="18" y="120" fill="#E2E8F0" font-family="sans-serif" font-size="8">Provisioned Concurrency +</text>
+    <text x="18" y="132" fill="#E2E8F0" font-family="sans-serif" font-size="8">ARM64 Graviton runtime.</text>
+    <text x="18" y="144" fill="#34D399" font-family="monospace" font-size="8">✓ Grounded in docs</text>
+  </g>
+
+  <!-- Bottom Badges -->
+  <g transform="translate(50, 298)">
+    <rect x="0" y="0" width="80" height="22" rx="4" fill="#1E293B" stroke="#475569" stroke-width="1" />
+    <text x="14" y="15" fill="#CBD5E1" font-family="monospace" font-size="10">Python</text>
+
+    <rect x="90" y="0" width="85" height="22" rx="4" fill="#1E293B" stroke="#475569" stroke-width="1" />
+    <text x="102" y="15" fill="#CBD5E1" font-family="monospace" font-size="10">Amazon S3</text>
+
+    <rect x="185" y="0" width="95" height="22" rx="4" fill="#1E293B" stroke="#475569" stroke-width="1" />
+    <text x="195" y="15" fill="#CBD5E1" font-family="monospace" font-size="10">Serverless AI</text>
+
+    <rect x="290" y="0" width="85" height="22" rx="4" fill="#1E293B" stroke="#475569" stroke-width="1" />
+    <text x="302" y="15" fill="#CBD5E1" font-family="monospace" font-size="10">REST API</text>
+  </g>
+</svg>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patil | Cloud Architect & Full-Stack Builder | AWS Portfolio</title>
+  <meta name="description" content="Personal portfolio of Patil: Cloud Architect & Full-Stack Builder. Features serverless projects, skills, and an interactive AWS CloudShell terminal built for the AWS Portfolio Challenge." />
+  <meta name="author" content="Patil" />
+  <meta name="theme-color" content="#FF9900" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Patil | AWS Cloud Architect & Full-Stack Builder" />
+  <meta property="og:description" content="Explore my AWS cloud projects, technical superpowers, and the interactive AWS CloudShell terminal." />
+  <meta property="og:image" content="assets/images/project-portfolio.svg" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/terminal.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/avatar.svg" />
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & STICKY NAVBAR
+       ========================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-container">
+      <a href="#hero" class="nav-brand">
+        <span class="brand-badge">AWS</span>
+        <span class="builder-name">Patil</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Superpowers</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#architecture" class="nav-link">Architecture</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions & Visible Creative Feature Hint -->
+      <div class="nav-actions">
+        <!-- Visible Hint in Navbar -->
+        <button id="nav-hint-btn" class="nav-hint-btn" title="Launch Interactive Terminal (Press ~)">
+          <span class="hint-pill-dot"></span>
+          <span>💡 Hint: CloudShell (~)</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+          🌙
+        </button>
+
+        <!-- GitHub Repository Button -->
+        <a id="nav-github-link" href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 0.45rem 0.9rem; font-size: 0.85rem;">
+          GitHub
+        </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Open Navigation Menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-status-pill">
+            <span class="hint-pill-dot"></span>
+            <span id="hero-status">Building cloud-native solutions & seeking new challenges</span>
+          </div>
+          
+          <h1 class="hero-title">
+            Architecting <span class="gradient-text">Scalable Cloud Systems</span> & Modern Web Experiences
+          </h1>
+
+          <p class="hero-subtitle" id="hero-bio">
+            Transforming ambitious ideas into resilient, cloud-native applications. Passionate about serverless architectures, distributed systems, and delightful developer experiences.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <span>🚀</span> Explore Projects
+            </a>
+            <!-- Hero Terminal Launch Button -->
+            <button id="hero-terminal-btn" class="btn btn-terminal">
+              <span>&gt;_</span> Launch CloudShell
+            </button>
+            <a href="#contact" class="btn btn-secondary">
+              <span>✉️</span> Get in Touch
+            </a>
+          </div>
+
+          <!-- Hero Metrics -->
+          <div class="hero-stats" id="hero-stats-container">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- Hero Avatar Illustration -->
+        <div class="hero-visual">
+          <div class="avatar-wrapper">
+            <img src="assets/images/avatar.svg" alt="Patil Avatar" />
+            <div class="avatar-badge-card">
+              <span class="badge-label">Primary Cloud</span>
+              <span class="badge-val">Amazon Web Services</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CORE SECTION 1: ABOUT ME
+         ========================================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Core Foundation</div>
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">The background, engineering philosophy, and values shaping every line of code I deploy.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Bio Paragraphs -->
+          <div class="about-bio" id="about-bio-container">
+            <!-- Populated via JS -->
+          </div>
+
+          <!-- Guiding Principles -->
+          <div class="principles-grid" id="principles-container">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <!-- Interactive Journey Timeline -->
+        <div class="timeline-section">
+          <h3 class="timeline-title">Engineering Journey & Milestones</h3>
+          <div class="timeline" id="timeline-container">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CORE SECTION 2: SKILLS OR TECH SUPERPOWERS
+         ========================================================================== -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Capabilities & Arsenal</div>
+          <h2 class="section-title">Skills & Tech Superpowers</h2>
+          <p class="section-subtitle">Decoupled cloud infrastructure, event-driven backends, and modern frontend mastery.</p>
+        </div>
+
+        <!-- Category Filter Tabs -->
+        <div class="skills-filter" id="skills-filter-container">
+          <!-- Populated via JS -->
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skills-grid">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CORE SECTION 3: PROJECTS OR ACHIEVEMENTS
+         ========================================================================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Proof of Execution</div>
+          <h2 class="section-title">Featured Projects & Achievements</h2>
+          <p class="section-subtitle">Real-world applications built with serverless architectures, resilient queues, and clean code.</p>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projects-grid">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         AWS ARCHITECTURE & DEPLOYMENT SECTION
+         ========================================================================== -->
+    <section class="section" id="architecture">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Cloud Infrastructure</div>
+          <h2 class="section-title">How This Site Runs on AWS</h2>
+          <p class="section-subtitle">High-availability, zero-maintenance global delivery powered by AWS Amplify Hosting.</p>
+        </div>
+
+        <div class="architecture-box">
+          <div class="architecture-diagram">
+            <div class="arch-node">
+              <div class="arch-icon">🐙</div>
+              <div class="arch-name">GitHub Repo</div>
+              <div class="arch-role">Source Control & CI Trigger</div>
+            </div>
+            <div class="arch-node">
+              <div class="arch-icon">🚀</div>
+              <div class="arch-name">AWS Amplify</div>
+              <div class="arch-role">Continuous Build & Deploy</div>
+            </div>
+            <div class="arch-node">
+              <div class="arch-icon">⚡</div>
+              <div class="arch-name">Amazon CloudFront</div>
+              <div class="arch-role">Global CDN Edge Caching</div>
+            </div>
+            <div class="arch-node">
+              <div class="arch-icon">🛡️</div>
+              <div class="arch-name">SSL & Security</div>
+              <div class="arch-role">Managed Amazon Certificates</div>
+            </div>
+          </div>
+
+          <div class="arch-specs">
+            <div class="spec-item">
+              <h4>Continuous Deployment</h4>
+              <p>Every git push automatically triggers a fast build and instant worldwide cache invalidation on AWS Amplify.</p>
+            </div>
+            <div class="spec-item">
+              <h4>Sub-Second Latency</h4>
+              <p>Static assets are distributed to 450+ Points of Presence worldwide via Amazon CloudFront with gzip and Brotli compression.</p>
+            </div>
+            <div class="spec-item">
+              <h4>Zero Server Overhead</h4>
+              <p>No servers to patch, no EC2 instances to monitor. 100% serverless, cost-effective, and automatically scales to traffic spikes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT & INQUIRIES SECTION
+         ========================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">Let's Connect</div>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Interested in collaborating on a cloud project or discussing opportunities? Send a message!</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <!-- Email Card with Copy button -->
+            <div class="contact-card">
+              <div class="contact-detail">
+                <span class="contact-icon">✉️</span>
+                <div>
+                  <span class="contact-label">Direct Email</span>
+                  <div class="contact-value" id="contact-email-val">builder.patil@example.com</div>
+                </div>
+              </div>
+              <button class="copy-btn" id="copy-email-btn">Copy</button>
+            </div>
+
+            <!-- AWS Builder Profile Card -->
+            <a href="https://builder.aws.com" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <div class="contact-detail">
+                <span class="contact-icon">☁️</span>
+                <div>
+                  <span class="contact-label">AWS Builder Profile</span>
+                  <div class="contact-value">builder.aws.com</div>
+                </div>
+              </div>
+              <span>↗</span>
+            </a>
+
+            <!-- GitHub Card -->
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <div class="contact-detail">
+                <span class="contact-icon">🐙</span>
+                <div>
+                  <span class="contact-label">GitHub Repository</span>
+                  <div class="contact-value">Open Source & Projects</div>
+                </div>
+              </div>
+              <span>↗</span>
+            </a>
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="form-name">Your Name</label>
+              <input type="text" id="form-name" class="form-input" placeholder="e.g. Andy Jassy" required />
+            </div>
+
+            <div class="form-group">
+              <label for="form-email">Your Email</label>
+              <input type="email" id="form-email" class="form-input" placeholder="name@company.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="form-message">Message</label>
+              <textarea id="form-message" class="form-input" placeholder="Let's build something scalable together..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="justify-content: center;">
+              Transmit Message 🚀
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-text">
+        © 2026 Patil. Built with passion for the <strong>AWS Portfolio Challenge</strong>. Hosted on <strong>AWS Amplify</strong>.
+      </div>
+      <ul class="footer-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Superpowers</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="#hero">Back to Top ↑</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       PERSISTENT FLOATING VISIBLE HINT BADGE (Rubric Requirement)
+       Visitors have a constant visible hint to discover the creative feature
+       ========================================================================== -->
+  <div id="floating-cloudshell-hint" class="floating-cloudshell-hint" role="button" aria-label="Open AWS CloudShell Terminal">
+    <div class="hint-icon">⚡</div>
+    <div class="hint-content">
+      <span class="hint-title">💡 Hint: AWS CloudShell <span class="hint-kbd">~</span></span>
+      <span class="hint-sub">Click here or press ~ to launch terminal</span>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       CREATIVE FEATURE: AWS CLOUDSHELL TERMINAL MODAL
+       Interactive CLI with real history, autocomplete, story, sound, and CI/CD deploy
+       ========================================================================== -->
+  <div class="terminal-modal-overlay" id="terminal-modal-overlay">
+    <div class="terminal-window" id="terminal-window">
+      <!-- Terminal Header -->
+      <div class="terminal-header">
+        <div class="terminal-controls">
+          <button class="term-btn term-btn-close" id="term-btn-close" title="Close Terminal"></button>
+          <button class="term-btn term-btn-min" id="term-btn-min" title="Minimize"></button>
+          <button class="term-btn term-btn-max" id="term-btn-max" title="Toggle Fullscreen"></button>
+        </div>
+
+        <div class="terminal-title-bar">
+          <span>aws-cloudshell :: builder@patil-portfolio</span>
+          <span class="term-region-tag">us-east-1</span>
+        </div>
+
+        <div class="terminal-actions-bar">
+          <button class="term-action-icon-btn" id="term-sound-toggle" title="Toggle Sound">🔊</button>
+        </div>
+      </div>
+
+      <!-- Terminal Output Screen -->
+      <div class="terminal-body" id="terminal-body">
+        <div class="term-ascii">
+    ___ _     ___  _   _ ____  ____  _   _ _____ _     _     
+   / _ \ |   / _ \| | | |  _ \/ ___|| | | | ____| |   | |    
+  / /_\ \| |  | | | | | | | | | \___ \| |_| |  _| | |   | |    
+ / /_\\ \| |__| |_| | |_| | |_| |___) |  _  | |___| |___| |___ 
+/_/   \_\\_____\___/ \___/|____/|____/|_| |_|_____|_____|_____|
+        </div>
+
+        <div class="term-welcome">
+          Welcome to <strong>AWS CloudShell v2.4.0</strong> (amplify-prod).<br />
+          Explore Patil's skills, story, and cloud deployments through interactive commands.<br />
+          Type <span class="term-highlight">help</span> to view commands, or click any suggestion below.
+        </div>
+
+        <div class="terminal-output" id="terminal-output">
+          <!-- Command outputs will appear here dynamically -->
+        </div>
+
+        <!-- Terminal Input Prompt -->
+        <div class="terminal-input-row">
+          <span class="terminal-prompt">builder@aws-cloudshell:<span class="prompt-host">~</span><span class="prompt-char">$</span></span>
+          <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" autofocus />
+        </div>
+      </div>
+
+      <!-- Quick Action Suggestion Chips -->
+      <div class="terminal-quick-chips">
+        <span class="quick-label">Suggestions:</span>
+        <button class="cmd-chip" data-cmd="help">help</button>
+        <button class="cmd-chip" data-cmd="whoami">whoami</button>
+        <button class="cmd-chip" data-cmd="superpowers">superpowers</button>
+        <button class="cmd-chip" data-cmd="projects">projects</button>
+        <button class="cmd-chip" data-cmd="story">story</button>
+        <button class="cmd-chip" data-cmd="sudo deploy">sudo deploy</button>
+        <button class="cmd-chip" data-cmd="matrix">matrix</button>
+        <button class="cmd-chip" data-cmd="theme">theme</button>
+        <button class="cmd-chip" data-cmd="clear">clear</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Matrix Canvas (Triggered via `matrix` in terminal) -->
+  <canvas id="matrix-canvas"></canvas>
+  <div class="matrix-exit-hint" id="matrix-exit-hint">Press ESC or Click Anywhere to Exit Matrix</div>
+
+  <!-- Project Details Architecture Modal -->
+  <div class="modal-overlay" id="project-modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Modal">&times;</button>
+      <h3 class="modal-title" id="modal-title">Project Title</h3>
+      <div class="project-tags" id="modal-tags"></div>
+      <p class="modal-body" id="modal-desc">Project Description</p>
+      <h4 style="color: var(--aws-orange); margin-top: 1rem;">Cloud Architecture Highlights:</h4>
+      <ul class="modal-arch-list" id="modal-arch-list"></ul>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/matrix.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

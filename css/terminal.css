@@ -1,0 +1,373 @@
+/* ==========================================================================
+   AWS CLOUDSHELL TERMINAL & MATRIX STYLES
+   Creative Feature UI: Authentic Interactive Cloud CLI
+   ========================================================================== */
+
+/* Fullscreen / Docked Terminal Overlay */
+.terminal-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(5, 8, 15, 0.75);
+  backdrop-filter: blur(12px);
+  z-index: 5000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.terminal-modal-overlay.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* Terminal Window Frame */
+.terminal-window {
+  width: 100%;
+  max-width: 900px;
+  height: 600px;
+  max-height: 85vh;
+  background: #090d16;
+  border: 1px solid rgba(255, 153, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 30px rgba(255, 153, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.terminal-window.fullscreen {
+  max-width: 96vw;
+  height: 94vh;
+  max-height: 94vh;
+}
+
+/* Terminal Header */
+.terminal-header {
+  background: #111726;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.terminal-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.term-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.15s ease;
+}
+
+.term-btn:hover {
+  transform: scale(1.2);
+}
+
+.term-btn-close { background: #ef4444; }
+.term-btn-min { background: #f59e0b; }
+.term-btn-max { background: #10b981; }
+
+.terminal-title-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.term-region-tag {
+  background: rgba(255, 153, 0, 0.15);
+  border: 1px solid rgba(255, 153, 0, 0.3);
+  color: #ff9900;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.terminal-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.term-action-icon-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 0.2rem;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+}
+
+.term-action-icon-btn:hover {
+  color: #ff9900;
+}
+
+/* Terminal Screen Body */
+.terminal-body {
+  flex: 1;
+  background: #070a12;
+  padding: 1.25rem;
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  position: relative;
+}
+
+/* Subtle CRT Scanline overlay */
+.terminal-body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+/* Terminal Output Items */
+.terminal-output {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.term-line {
+  word-break: break-word;
+}
+
+.term-welcome {
+  color: #94a3b8;
+  margin-bottom: 1rem;
+  border-left: 3px solid #ff9900;
+  padding-left: 0.75rem;
+}
+
+.term-ascii {
+  color: #ff9900;
+  font-size: 0.75rem;
+  line-height: 1.15;
+  white-space: pre;
+  margin-bottom: 0.5rem;
+}
+
+.term-cmd-echo {
+  color: #00f0ff;
+  font-weight: 600;
+}
+
+.term-highlight {
+  color: #ff9900;
+  font-weight: 600;
+}
+
+.term-success {
+  color: #10b981;
+}
+
+.term-info {
+  color: #38bdf8;
+}
+
+.term-warn {
+  color: #f59e0b;
+}
+
+.term-error {
+  color: #f43f5e;
+}
+
+.term-muted {
+  color: #64748b;
+}
+
+/* Terminal Tables / Badges */
+.term-table {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 0.35rem 1rem;
+  margin: 0.5rem 0;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.term-key {
+  color: #ff9900;
+  font-weight: 600;
+}
+
+.term-val {
+  color: #e2e8f0;
+}
+
+/* Input Line */
+.terminal-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.terminal-prompt {
+  color: #10b981;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.terminal-prompt .prompt-host {
+  color: #ff9900;
+}
+
+.terminal-prompt .prompt-char {
+  color: #00f0ff;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  caret-color: #ff9900;
+}
+
+/* Quick Action Suggestion Chips */
+.terminal-quick-chips {
+  background: #0d1322;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.65rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow-x: auto;
+  user-select: none;
+}
+
+.quick-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.cmd-chip {
+  background: rgba(255, 153, 0, 0.1);
+  border: 1px solid rgba(255, 153, 0, 0.3);
+  color: #ff9900;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.cmd-chip:hover {
+  background: #ff9900;
+  color: #0b0f19;
+}
+
+/* Simulated CI/CD Pipeline Progress Bar */
+.deploy-pipeline {
+  margin: 0.75rem 0;
+  background: #0d1322;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 0.75rem;
+}
+
+.deploy-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.deploy-status-icon {
+  font-size: 0.85rem;
+}
+
+.deploy-progress-track {
+  width: 100%;
+  height: 6px;
+  background: #1e293b;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.deploy-progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #ff9900, #10b981);
+  transition: width 0.3s ease;
+}
+
+/* Matrix Fullscreen Canvas */
+#matrix-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background: #000;
+  display: none;
+  pointer-events: auto;
+}
+
+#matrix-canvas.active {
+  display: block;
+}
+
+.matrix-exit-hint {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid #00ff66;
+  color: #00ff66;
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  z-index: 10000;
+  box-shadow: 0 0 20px rgba(0, 255, 102, 0.5);
+  display: none;
+}
+
+.matrix-exit-hint.active {
+  display: block;
+}
