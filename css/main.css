@@ -547,12 +547,13 @@ body::after {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 560px;
 }
 
 .avatar-wrapper {
   position: relative;
-  width: 310px;
-  height: 310px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   padding: 6px;
   background: linear-gradient(135deg, var(--aws-orange) 20%, var(--cyan-neon) 80%);
@@ -560,6 +561,7 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 5;
 }
 
 .avatar-wrapper img {
@@ -575,14 +577,18 @@ body::after {
 
 .avatar-badge-card {
   position: absolute;
-  bottom: 0px;
-  left: -20px;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
   background: rgba(13, 19, 34, 0.95);
   border: 1px solid var(--aws-orange);
-  padding: 0.75rem 1rem;
+  padding: 0.45rem 0.85rem;
   border-radius: var(--radius-md);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
+  white-space: nowrap;
+  text-align: center;
+  z-index: 6;
 }
 
 .avatar-badge-card span {
@@ -590,13 +596,14 @@ body::after {
 }
 
 .badge-label {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   color: var(--text-muted);
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .badge-val {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--aws-orange);
   font-family: var(--font-mono);
@@ -1534,147 +1541,184 @@ textarea.form-input {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 440px;
+  min-height: 560px;
 }
 
+/* Outer Orbit Container */
 .juggling-tools-orbit {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 100%;
-  height: 100%;
+  width: 560px;
+  height: 560px;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  z-index: 15;
+  z-index: 10;
+  transition: transform 0.3s ease;
 }
 
-.juggling-tools-orbit:hover .juggle-orb {
-  animation-play-state: paused;
+/* Subtle glowing orbital trajectory guide rings */
+.juggling-tools-orbit::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 360px; /* 2 * 180px */
+  height: 360px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 153, 0, 0.18);
+  pointer-events: none;
 }
 
+.juggling-tools-orbit::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px; /* 2 * 250px */
+  height: 500px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 240, 255, 0.15);
+  pointer-events: none;
+}
+
+/* Orbit Tracks (Concentric Non-Overlapping Rotational Frames) */
+.orbit-track {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.track-inner {
+  animation: orbit-rotate-cw 60s linear infinite;
+}
+
+.track-outer {
+  animation: orbit-rotate-ccw 85s linear infinite;
+}
+
+@keyframes orbit-rotate-cw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes orbit-rotate-ccw {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+/* Individual Juggling Orbs */
 .juggle-orb {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 52px;
-  height: 52px;
   border-radius: 50%;
-  background: rgba(11, 16, 28, 0.92);
-  backdrop-filter: blur(10px);
+  background: rgba(11, 16, 28, 0.94);
+  backdrop-filter: blur(12px);
   border: 1.5px solid rgba(255, 255, 255, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
-  pointer-events: auto;
   cursor: pointer;
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  pointer-events: auto;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.04);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
   will-change: transform;
 }
 
-.juggle-orb svg {
-  width: 26px;
-  height: 26px;
+/* Inner Track Orbs: Radius = 180px, Diameter = 44px */
+.track-inner .juggle-orb {
+  --radius: 180px;
+  width: 44px;
+  height: 44px;
+  margin-top: -22px;
+  margin-left: -22px;
+  transform: rotate(var(--angle)) translate(var(--radius)) rotate(calc(-1 * var(--angle)));
+}
+
+/* Outer Track Orbs: Radius = 250px, Diameter = 46px */
+.track-outer .juggle-orb {
+  --radius: 250px;
+  width: 46px;
+  height: 46px;
+  margin-top: -23px;
+  margin-left: -23px;
+  transform: rotate(var(--angle)) translate(var(--radius)) rotate(calc(-1 * var(--angle)));
+}
+
+/* Hover Scaling & Glow */
+.juggle-orb:hover {
+  z-index: 120 !important;
+  background: rgba(18, 25, 44, 0.98);
+}
+
+.track-inner .juggle-orb:hover {
+  transform: rotate(var(--angle)) translate(var(--radius)) rotate(calc(-1 * var(--angle))) scale(1.3) !important;
+}
+
+.track-outer .juggle-orb:hover {
+  transform: rotate(var(--angle)) translate(var(--radius)) rotate(calc(-1 * var(--angle))) scale(1.3) !important;
+}
+
+/* Pause animation on hover */
+.juggling-tools-orbit:hover .track-inner,
+.juggling-tools-orbit:hover .track-outer,
+.juggling-tools-orbit:hover .orb-icon-inner,
+.juggling-tools-orbit:hover .orb-bob {
+  animation-play-state: paused;
+}
+
+/* Gentle Juggling Floating Bob */
+.orb-bob {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: juggle-bob 3.6s ease-in-out infinite alternate;
+  animation-delay: var(--bob-delay, 0s);
+}
+
+@keyframes juggle-bob {
+  0%   { transform: translateY(-3px) scale(0.98); }
+  50%  { transform: translateY(0px) scale(1); }
+  100% { transform: translateY(4px) scale(1.02); }
+}
+
+/* Upright Counter-Rotation for Logos & Tooltips */
+.orb-icon-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.track-inner .orb-icon-inner {
+  animation: orbit-rotate-ccw 60s linear infinite;
+}
+
+.track-outer .orb-icon-inner {
+  animation: orbit-rotate-cw 85s linear infinite;
+}
+
+.juggle-orb img {
+  width: 27px;
+  height: 27px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
   transition: transform 0.2s ease;
 }
 
-.juggle-orb:hover {
-  transform: scale(1.3) !important;
-  z-index: 100 !important;
-}
-
-.juggle-orb:hover svg {
+.juggle-orb:hover img {
   transform: scale(1.15);
-}
-
-/* Tool-specific Glows & Accents */
-.orb-lambda {
-  border-color: #ff9900;
-  box-shadow: 0 0 15px rgba(255, 153, 0, 0.35);
-  animation: juggle-1 4.2s ease-in-out infinite alternate;
-}
-.orb-lambda:hover {
-  border-color: #ffb347;
-  box-shadow: 0 0 25px rgba(255, 153, 0, 0.7);
-}
-
-.orb-terraform {
-  border-color: #844fba;
-  box-shadow: 0 0 15px rgba(132, 79, 186, 0.35);
-  animation: juggle-2 4.8s ease-in-out infinite alternate;
-}
-.orb-terraform:hover {
-  border-color: #a855f7;
-  box-shadow: 0 0 25px rgba(168, 85, 247, 0.7);
-}
-
-.orb-docker {
-  border-color: #2496ed;
-  box-shadow: 0 0 15px rgba(36, 150, 237, 0.35);
-  animation: juggle-3 5.2s ease-in-out infinite alternate;
-}
-.orb-docker:hover {
-  border-color: #38bdf8;
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.7);
-}
-
-.orb-sonarqube {
-  border-color: #4b9fd5;
-  box-shadow: 0 0 15px rgba(75, 159, 213, 0.35);
-  animation: juggle-4 4.5s ease-in-out infinite alternate;
-}
-.orb-sonarqube:hover {
-  border-color: #00f0ff;
-  box-shadow: 0 0 25px rgba(0, 240, 255, 0.7);
-}
-
-.orb-owasp {
-  border-color: #00f0ff;
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.35);
-  animation: juggle-5 5.6s ease-in-out infinite alternate;
-}
-.orb-owasp:hover {
-  border-color: #10b981;
-  box-shadow: 0 0 25px rgba(16, 185, 129, 0.7);
-}
-
-.orb-prometheus {
-  border-color: #e6522c;
-  box-shadow: 0 0 15px rgba(230, 82, 44, 0.35);
-  animation: juggle-6 4.9s ease-in-out infinite alternate;
-}
-.orb-prometheus:hover {
-  border-color: #f97316;
-  box-shadow: 0 0 25px rgba(249, 115, 22, 0.7);
-}
-
-.orb-grafana {
-  border-color: #f46800;
-  box-shadow: 0 0 15px rgba(244, 104, 0, 0.35);
-  animation: juggle-7 5.1s ease-in-out infinite alternate;
-}
-.orb-grafana:hover {
-  border-color: #ffa500;
-  box-shadow: 0 0 25px rgba(255, 165, 0, 0.7);
-}
-
-.orb-jenkins {
-  border-color: #d33833;
-  box-shadow: 0 0 15px rgba(211, 56, 51, 0.35);
-  animation: juggle-8 4.3s ease-in-out infinite alternate;
-}
-.orb-jenkins:hover {
-  border-color: #ef4444;
-  box-shadow: 0 0 25px rgba(239, 68, 68, 0.7);
-}
-
-.orb-vpc {
-  border-color: #ff9900;
-  box-shadow: 0 0 15px rgba(255, 153, 0, 0.35);
-  animation: juggle-9 4.7s ease-in-out infinite alternate;
-}
-.orb-vpc:hover {
-  border-color: #38bdf8;
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.7);
 }
 
 /* Tooltip on Hover */
@@ -1687,7 +1731,7 @@ textarea.form-input {
   border: 1px solid var(--aws-orange);
   color: #fff;
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 700;
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
@@ -1695,7 +1739,7 @@ textarea.form-input {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.2s ease, transform 0.2s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
   z-index: 200;
 }
 
@@ -1704,267 +1748,119 @@ textarea.form-input {
   transform: translateX(-50%) translateY(4px);
 }
 
-/* Juggling Trajectory Keyframes (Organic Parabolic Arcs) */
-@keyframes juggle-1 {
-  0%   { transform: translate(-40px, -215px) rotate(-6deg); }
-  50%  { transform: translate(15px, -235px) rotate(4deg); }
-  100% { transform: translate(45px, -200px) rotate(-3deg); }
-}
+/* Specific Tool Orb Border & Glow Accents */
+.orb-ec2 { border-color: #ed7100; box-shadow: 0 0 15px rgba(237, 113, 0, 0.4); }
+.orb-ec2:hover { border-color: #ff9900; box-shadow: 0 0 25px rgba(255, 153, 0, 0.8); }
 
-@keyframes juggle-2 {
-  0%   { transform: translate(130px, -180px) rotate(5deg); }
-  50%  { transform: translate(175px, -150px) rotate(-4deg); }
-  100% { transform: translate(145px, -125px) rotate(8deg); }
-}
+.orb-lambda { border-color: #ed7100; box-shadow: 0 0 15px rgba(237, 113, 0, 0.4); }
+.orb-lambda:hover { border-color: #ff9900; box-shadow: 0 0 25px rgba(255, 153, 0, 0.8); }
 
-@keyframes juggle-3 {
-  0%   { transform: translate(195px, -65px) rotate(-5deg); }
-  50%  { transform: translate(225px, -10px) rotate(6deg); }
-  100% { transform: translate(190px, 45px) rotate(-4deg); }
-}
+.orb-s3 { border-color: #3f8624; box-shadow: 0 0 15px rgba(63, 134, 36, 0.4); }
+.orb-s3:hover { border-color: #569d31; box-shadow: 0 0 25px rgba(86, 157, 49, 0.8); }
 
-@keyframes juggle-4 {
-  0%   { transform: translate(160px, 95px) rotate(4deg); }
-  50%  { transform: translate(195px, 145px) rotate(-5deg); }
-  100% { transform: translate(145px, 185px) rotate(6deg); }
-}
+.orb-ebs { border-color: #3f8624; box-shadow: 0 0 15px rgba(63, 134, 36, 0.4); }
+.orb-ebs:hover { border-color: #569d31; box-shadow: 0 0 25px rgba(86, 157, 49, 0.8); }
 
-@keyframes juggle-5 {
-  0%   { transform: translate(-30px, 205px) rotate(-4deg); }
-  50%  { transform: translate(35px, 225px) rotate(5deg); }
-  100% { transform: translate(75px, 195px) rotate(-3deg); }
-}
+.orb-elb { border-color: #8c4fff; box-shadow: 0 0 15px rgba(140, 79, 255, 0.4); }
+.orb-elb:hover { border-color: #a855f7; box-shadow: 0 0 25px rgba(168, 85, 247, 0.8); }
 
-@keyframes juggle-6 {
-  0%   { transform: translate(-145px, 175px) rotate(6deg); }
-  50%  { transform: translate(-190px, 135px) rotate(-5deg); }
-  100% { transform: translate(-165px, 85px) rotate(4deg); }
-}
+.orb-autoscaling { border-color: #ed7100; box-shadow: 0 0 15px rgba(237, 113, 0, 0.4); }
+.orb-autoscaling:hover { border-color: #ff9900; box-shadow: 0 0 25px rgba(255, 153, 0, 0.8); }
 
-@keyframes juggle-7 {
-  0%   { transform: translate(-190px, 35px) rotate(-6deg); }
-  50%  { transform: translate(-225px, -25px) rotate(5deg); }
-  100% { transform: translate(-195px, -75px) rotate(-4deg); }
-}
+.orb-iam { border-color: #dd344c; box-shadow: 0 0 15px rgba(221, 52, 76, 0.4); }
+.orb-iam:hover { border-color: #ef4444; box-shadow: 0 0 25px rgba(239, 68, 68, 0.8); }
 
-@keyframes juggle-8 {
-  0%   { transform: translate(-140px, -135px) rotate(5deg); }
-  50%  { transform: translate(-180px, -165px) rotate(-6deg); }
-  100% { transform: translate(-130px, -195px) rotate(4deg); }
-}
+.orb-vpc { border-color: #8c4fff; box-shadow: 0 0 15px rgba(140, 79, 255, 0.4); }
+.orb-vpc:hover { border-color: #38bdf8; box-shadow: 0 0 25px rgba(56, 189, 248, 0.8); }
 
-@keyframes juggle-9 {
-  0%   { transform: translate(65px, -210px) rotate(-4deg); }
-  50%  { transform: translate(105px, -190px) rotate(6deg); }
-  100% { transform: translate(50px, -170px) rotate(-5deg); }
-}
+.orb-eks { border-color: #ed7100; box-shadow: 0 0 15px rgba(237, 113, 0, 0.4); }
+.orb-eks:hover { border-color: #38bdf8; box-shadow: 0 0 25px rgba(56, 189, 248, 0.8); }
 
-/* Responsive adjustment for Mobile screens */
-@media (max-width: 768px) {
+.orb-ecs { border-color: #ed7100; box-shadow: 0 0 15px rgba(237, 113, 0, 0.4); }
+.orb-ecs:hover { border-color: #ff9900; box-shadow: 0 0 25px rgba(255, 153, 0, 0.8); }
+
+.orb-kms { border-color: #dd344c; box-shadow: 0 0 15px rgba(221, 52, 76, 0.4); }
+.orb-kms:hover { border-color: #f43f5e; box-shadow: 0 0 25px rgba(244, 63, 94, 0.8); }
+
+.orb-cloudwatch { border-color: #c925d1; box-shadow: 0 0 15px rgba(201, 37, 209, 0.4); }
+.orb-cloudwatch:hover { border-color: #e879f9; box-shadow: 0 0 25px rgba(232, 121, 249, 0.8); }
+
+.orb-codepipeline { border-color: #3b48cc; box-shadow: 0 0 15px rgba(59, 72, 204, 0.4); }
+.orb-codepipeline:hover { border-color: #60a5fa; box-shadow: 0 0 25px rgba(96, 165, 250, 0.8); }
+
+.orb-terraform { border-color: #844fba; box-shadow: 0 0 15px rgba(132, 79, 186, 0.4); }
+.orb-terraform:hover { border-color: #a855f7; box-shadow: 0 0 25px rgba(168, 85, 247, 0.8); }
+
+.orb-k8s { border-color: #326ce5; box-shadow: 0 0 15px rgba(50, 108, 229, 0.4); }
+.orb-k8s:hover { border-color: #60a5fa; box-shadow: 0 0 25px rgba(96, 165, 250, 0.8); }
+
+.orb-docker { border-color: #2496ed; box-shadow: 0 0 15px rgba(36, 150, 237, 0.4); }
+.orb-docker:hover { border-color: #38bdf8; box-shadow: 0 0 25px rgba(56, 189, 248, 0.8); }
+
+.orb-argocd { border-color: #ef6b48; box-shadow: 0 0 15px rgba(239, 107, 72, 0.4); }
+.orb-argocd:hover { border-color: #fb923c; box-shadow: 0 0 25px rgba(251, 146, 60, 0.8); }
+
+.orb-gitops { border-color: #00f0ff; box-shadow: 0 0 15px rgba(0, 240, 255, 0.4); }
+.orb-gitops:hover { border-color: #38bdf8; box-shadow: 0 0 25px rgba(56, 189, 248, 0.8); }
+
+.orb-jenkins { border-color: #d33833; box-shadow: 0 0 15px rgba(211, 56, 51, 0.4); }
+.orb-jenkins:hover { border-color: #ef4444; box-shadow: 0 0 25px rgba(239, 68, 68, 0.8); }
+
+.orb-prometheus { border-color: #e6522c; box-shadow: 0 0 15px rgba(230, 82, 44, 0.4); }
+.orb-prometheus:hover { border-color: #f97316; box-shadow: 0 0 25px rgba(249, 115, 22, 0.8); }
+
+.orb-grafana { border-color: #f46800; box-shadow: 0 0 15px rgba(244, 104, 0, 0.4); }
+.orb-grafana:hover { border-color: #ffa500; box-shadow: 0 0 25px rgba(255, 165, 0, 0.8); }
+
+/* Responsive adjustments for Tablets & Mobile */
+@media (max-width: 992px) {
   .hero-visual {
-    min-height: 380px;
+    min-height: 490px;
     margin-top: 1.5rem;
   }
   .juggling-tools-orbit {
-    transform: translate(-50%, -50%) scale(0.72);
+    transform: translate(-50%, -50%) scale(0.80);
   }
-  .juggle-orb {
-    width: 44px;
-    height: 44px;
-  }
-  .juggle-orb svg {
-    width: 22px;
-    height: 22px;
+  .avatar-wrapper {
+    width: 220px;
+    height: 220px;
   }
 }
 
-
-/* ==========================================================================
-   OFFICIAL AWS & DEVSECOPS LOGOS JUGGLING ORBITS & ARSENAL
-   ========================================================================== */
-
-.juggle-orb img {
-  width: 32px;
-  height: 32px;
-  object-fit: contain;
-  transition: transform 0.2s ease;
-  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.4));
+@media (max-width: 768px) {
+  .hero-visual {
+    min-height: 430px;
+    margin-top: 1.5rem;
+  }
+  .juggling-tools-orbit {
+    transform: translate(-50%, -50%) scale(0.68);
+  }
+  .avatar-wrapper {
+    width: 190px;
+    height: 190px;
+  }
 }
 
-.juggle-orb:hover img {
-  transform: scale(1.18);
+@media (max-width: 480px) {
+  .hero-visual {
+    min-height: 370px;
+  }
+  .juggling-tools-orbit {
+    transform: translate(-50%, -50%) scale(0.56);
+  }
+  .avatar-wrapper {
+    width: 165px;
+    height: 165px;
+  }
 }
 
-/* Specific Tool Orb Border & Glow Color Accents */
-.orb-ec2 {
-  border-color: #ed7100;
-  box-shadow: 0 0 16px rgba(237, 113, 0, 0.4);
-  animation: juggle-1 4.3s ease-in-out infinite alternate;
-}
-.orb-ec2:hover {
-  border-color: #ff9900;
-  box-shadow: 0 0 28px rgba(255, 153, 0, 0.8);
-}
-
-.orb-s3 {
-  border-color: #3f8624;
-  box-shadow: 0 0 16px rgba(63, 134, 36, 0.4);
-  animation: juggle-3 4.9s ease-in-out infinite alternate;
-}
-.orb-s3:hover {
-  border-color: #569d31;
-  box-shadow: 0 0 28px rgba(86, 157, 49, 0.8);
-}
-
-.orb-ebs {
-  border-color: #3f8624;
-  box-shadow: 0 0 16px rgba(63, 134, 36, 0.35);
-  animation: juggle-10 5.1s ease-in-out infinite alternate;
-}
-.orb-ebs:hover {
-  border-color: #10b981;
-  box-shadow: 0 0 28px rgba(16, 185, 129, 0.8);
-}
-
-.orb-elb {
-  border-color: #8c4fff;
-  box-shadow: 0 0 16px rgba(140, 79, 255, 0.4);
-  animation: juggle-11 4.7s ease-in-out infinite alternate;
-}
-.orb-elb:hover {
-  border-color: #a855f7;
-  box-shadow: 0 0 28px rgba(168, 85, 247, 0.8);
-}
-
-.orb-autoscaling {
-  border-color: #ed7100;
-  box-shadow: 0 0 16px rgba(237, 113, 0, 0.4);
-  animation: juggle-12 5.3s ease-in-out infinite alternate;
-}
-.orb-autoscaling:hover {
-  border-color: #ff9900;
-  box-shadow: 0 0 28px rgba(255, 153, 0, 0.8);
-}
-
-.orb-iam {
-  border-color: #dd344c;
-  box-shadow: 0 0 16px rgba(221, 52, 76, 0.4);
-  animation: juggle-5 4.6s ease-in-out infinite alternate;
-}
-.orb-iam:hover {
-  border-color: #ef4444;
-  box-shadow: 0 0 28px rgba(239, 68, 68, 0.8);
-}
-
-.orb-kms {
-  border-color: #dd344c;
-  box-shadow: 0 0 16px rgba(221, 52, 76, 0.35);
-  animation: juggle-13 5.5s ease-in-out infinite alternate;
-}
-.orb-kms:hover {
-  border-color: #f43f5e;
-  box-shadow: 0 0 28px rgba(244, 63, 94, 0.8);
-}
-
-.orb-cloudwatch {
-  border-color: #c925d1;
-  box-shadow: 0 0 16px rgba(201, 37, 209, 0.4);
-  animation: juggle-6 5.0s ease-in-out infinite alternate;
-}
-.orb-cloudwatch:hover {
-  border-color: #e879f9;
-  box-shadow: 0 0 28px rgba(232, 121, 249, 0.8);
-}
-
-.orb-codepipeline {
-  border-color: #3b48cc;
-  box-shadow: 0 0 16px rgba(59, 72, 204, 0.4);
-  animation: juggle-14 4.8s ease-in-out infinite alternate;
-}
-.orb-codepipeline:hover {
-  border-color: #60a5fa;
-  box-shadow: 0 0 28px rgba(96, 165, 250, 0.8);
-}
-
-.orb-eks {
-  border-color: #ed7100;
-  box-shadow: 0 0 16px rgba(237, 113, 0, 0.4);
-  animation: juggle-2 4.4s ease-in-out infinite alternate;
-}
-.orb-eks:hover {
-  border-color: #38bdf8;
-  box-shadow: 0 0 28px rgba(56, 189, 248, 0.8);
-}
-
-.orb-ecs {
-  border-color: #ed7100;
-  box-shadow: 0 0 16px rgba(237, 113, 0, 0.35);
-  animation: juggle-8 5.2s ease-in-out infinite alternate;
-}
-.orb-ecs:hover {
-  border-color: #ff9900;
-  box-shadow: 0 0 28px rgba(255, 153, 0, 0.8);
-}
-
-.orb-k8s {
-  border-color: #326ce5;
-  box-shadow: 0 0 16px rgba(50, 108, 229, 0.4);
-  animation: juggle-4 4.8s ease-in-out infinite alternate;
-}
-.orb-k8s:hover {
-  border-color: #60a5fa;
-  box-shadow: 0 0 28px rgba(96, 165, 250, 0.8);
-}
-
-.orb-argocd {
-  border-color: #ef6b48;
-  box-shadow: 0 0 16px rgba(239, 107, 72, 0.4);
-  animation: juggle-7 4.6s ease-in-out infinite alternate;
-}
-.orb-argocd:hover {
-  border-color: #fb923c;
-  box-shadow: 0 0 28px rgba(251, 146, 60, 0.8);
-}
-
-.orb-gitops {
-  border-color: #00f0ff;
-  box-shadow: 0 0 16px rgba(0, 240, 255, 0.4);
-  animation: juggle-9 5.4s ease-in-out infinite alternate;
-}
-.orb-gitops:hover {
-  border-color: #38bdf8;
-  box-shadow: 0 0 28px rgba(56, 189, 248, 0.8);
-}
-
-/* Additional Juggling Trajectories */
-@keyframes juggle-10 {
-  0%   { transform: translate(110px, 165px) rotate(-5deg); }
-  50%  { transform: translate(155px, 195px) rotate(4deg); }
-  100% { transform: translate(90px, 215px) rotate(-3deg); }
-}
-
-@keyframes juggle-11 {
-  0%   { transform: translate(-110px, 165px) rotate(6deg); }
-  50%  { transform: translate(-155px, 195px) rotate(-5deg); }
-  100% { transform: translate(-90px, 215px) rotate(4deg); }
-}
-
-@keyframes juggle-12 {
-  0%   { transform: translate(210px, 55px) rotate(-6deg); }
-  50%  { transform: translate(245px, -15px) rotate(5deg); }
-  100% { transform: translate(215px, -75px) rotate(-4deg); }
-}
-
-@keyframes juggle-13 {
-  0%   { transform: translate(-210px, 55px) rotate(5deg); }
-  50%  { transform: translate(-245px, -15px) rotate(-6deg); }
-  100% { transform: translate(-215px, -75px) rotate(4deg); }
-}
-
-@keyframes juggle-14 {
-  0%   { transform: translate(0px, 225px) rotate(4deg); }
-  50%  { transform: translate(50px, 245px) rotate(-4deg); }
-  100% { transform: translate(-50px, 240px) rotate(5deg); }
+@media (prefers-reduced-motion: reduce) {
+  .track-inner,
+  .track-outer,
+  .orb-icon-inner,
+  .orb-bob {
+    animation: none !important;
+  }
 }
 
 /* ==========================================================================

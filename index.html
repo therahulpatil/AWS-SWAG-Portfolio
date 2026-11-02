@@ -110,120 +110,223 @@
 
         <!-- Hero Avatar Portrait with Juggling Official AWS & DevOps Tools -->
         <div class="hero-visual">
-          <!-- Orbiting / Juggling Tools Animation with Official Logos -->
+          <!-- Orbiting / Juggling Tools Dual-Ring Animation with Official Logos -->
           <div class="juggling-tools-orbit" id="juggling-orbit" aria-label="Official AWS and DevOps Tools Juggling Animation">
-            <!-- AWS EC2 -->
-            <div class="juggle-orb orb-ec2" title="Amazon EC2 (Elastic Compute Cloud)">
-              <img src="assets/icons/aws-ec2.svg" alt="Amazon EC2" loading="eager" />
-              <span class="juggle-tooltip">Amazon EC2</span>
+            
+            <!-- INNER JUGGLING TRACK (10 Tools, R=180px, Clockwise Rotation) -->
+            <div class="orbit-track track-inner">
+              <!-- AWS Lambda -->
+              <div class="juggle-orb orb-lambda" style="--angle: 0deg; --bob-delay: 0s;" title="AWS Lambda (Serverless Compute)">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/aws-lambda.svg" alt="AWS Lambda" loading="eager" />
+                    <span class="juggle-tooltip">AWS Lambda</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Terraform -->
+              <div class="juggle-orb orb-terraform" style="--angle: 36deg; --bob-delay: -0.36s;" title="HashiCorp Terraform (IaC)">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/tool-terraform.svg" alt="Terraform" loading="eager" />
+                    <span class="juggle-tooltip">Terraform IaC</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- AWS S3 -->
+              <div class="juggle-orb orb-s3" style="--angle: 72deg; --bob-delay: -0.72s;" title="Amazon S3 (Simple Storage Service)">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/aws-s3.svg" alt="Amazon S3" loading="eager" />
+                    <span class="juggle-tooltip">Amazon S3</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Docker -->
+              <div class="juggle-orb orb-docker" style="--angle: 108deg; --bob-delay: -1.08s;" title="Docker Containerization">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/tool-docker.svg" alt="Docker" loading="eager" />
+                    <span class="juggle-tooltip">Docker</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- AWS IAM -->
+              <div class="juggle-orb orb-iam" style="--angle: 144deg; --bob-delay: -1.44s;" title="AWS Identity & Access Management">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/aws-iam.svg" alt="AWS IAM" loading="eager" />
+                    <span class="juggle-tooltip">AWS IAM</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Kubernetes (K8s) -->
+              <div class="juggle-orb orb-k8s" style="--angle: 180deg; --bob-delay: -1.8s;" title="Kubernetes (K8s)">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/tool-k8s.svg" alt="Kubernetes" loading="eager" />
+                    <span class="juggle-tooltip">Kubernetes (K8s)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- AWS KMS -->
+              <div class="juggle-orb orb-kms" style="--angle: 216deg; --bob-delay: -2.16s;" title="AWS Key Management Service">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/aws-kms.svg" alt="AWS KMS" loading="eager" />
+                    <span class="juggle-tooltip">AWS KMS</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Argo CD -->
+              <div class="juggle-orb orb-argocd" style="--angle: 252deg; --bob-delay: -2.52s;" title="Argo CD (GitOps Continuous Delivery)">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/tool-argocd.svg" alt="Argo CD" loading="eager" />
+                    <span class="juggle-tooltip">Argo CD</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- AWS VPC -->
+              <div class="juggle-orb orb-vpc" style="--angle: 288deg; --bob-delay: -2.88s;" title="Amazon Virtual Private Cloud">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/aws-vpc.svg" alt="Amazon VPC" loading="eager" />
+                    <span class="juggle-tooltip">Amazon VPC</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- GitOps -->
+              <div class="juggle-orb orb-gitops" style="--angle: 324deg; --bob-delay: -3.24s;" title="GitOps Principles & Automation">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/tool-gitops.svg" alt="GitOps" loading="eager" />
+                    <span class="juggle-tooltip">GitOps</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <!-- AWS Lambda -->
-            <div class="juggle-orb orb-lambda" title="AWS Lambda (Serverless Compute)">
-              <img src="assets/icons/aws-lambda.svg" alt="AWS Lambda" loading="eager" />
-              <span class="juggle-tooltip">AWS Lambda</span>
-            </div>
+            <!-- OUTER JUGGLING TRACK (11 Tools, R=250px, Counter-Clockwise Rotation) -->
+            <div class="orbit-track track-outer">
+              <!-- AWS EC2 -->
+              <div class="juggle-orb orb-ec2" style="--angle: 16.36deg; --bob-delay: -0.2s;" title="Amazon EC2 (Elastic Compute Cloud)">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/aws-ec2.svg" alt="Amazon EC2" loading="eager" />
+                    <span class="juggle-tooltip">Amazon EC2</span>
+                  </div>
+                </div>
+              </div>
 
-            <!-- AWS S3 -->
-            <div class="juggle-orb orb-s3" title="Amazon S3 (Simple Storage Service)">
-              <img src="assets/icons/aws-s3.svg" alt="Amazon S3" loading="eager" />
-              <span class="juggle-tooltip">Amazon S3</span>
-            </div>
+              <!-- AWS EKS -->
+              <div class="juggle-orb orb-eks" style="--angle: 49.09deg; --bob-delay: -0.55s;" title="Amazon Elastic Kubernetes Service">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/aws-eks.svg" alt="Amazon EKS" loading="eager" />
+                    <span class="juggle-tooltip">Amazon EKS</span>
+                  </div>
+                </div>
+              </div>
 
-            <!-- AWS EBS -->
-            <div class="juggle-orb orb-ebs" title="Amazon EBS (Elastic Block Store)">
-              <img src="assets/icons/aws-ebs.svg" alt="Amazon EBS" loading="eager" />
-              <span class="juggle-tooltip">Amazon EBS</span>
-            </div>
+              <!-- AWS EBS -->
+              <div class="juggle-orb orb-ebs" style="--angle: 81.82deg; --bob-delay: -0.9s;" title="Amazon EBS (Elastic Block Store)">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/aws-ebs.svg" alt="Amazon EBS" loading="eager" />
+                    <span class="juggle-tooltip">Amazon EBS</span>
+                  </div>
+                </div>
+              </div>
 
-            <!-- AWS ELB -->
-            <div class="juggle-orb orb-elb" title="Elastic Load Balancing">
-              <img src="assets/icons/aws-elb.svg" alt="AWS ELB" loading="eager" />
-              <span class="juggle-tooltip">AWS ELB</span>
-            </div>
+              <!-- Jenkins -->
+              <div class="juggle-orb orb-jenkins" style="--angle: 114.55deg; --bob-delay: -1.25s;" title="Jenkins Automation Server">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/tool-jenkins.svg" alt="Jenkins" loading="eager" />
+                    <span class="juggle-tooltip">Jenkins CI/CD</span>
+                  </div>
+                </div>
+              </div>
 
-            <!-- AWS Auto Scaling -->
-            <div class="juggle-orb orb-autoscaling" title="EC2 Auto Scaling">
-              <img src="assets/icons/aws-autoscaling.svg" alt="AWS Auto Scaling" loading="eager" />
-              <span class="juggle-tooltip">Auto Scaling</span>
-            </div>
+              <!-- AWS ELB -->
+              <div class="juggle-orb orb-elb" style="--angle: 147.27deg; --bob-delay: -1.6s;" title="Elastic Load Balancing">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/aws-elb.svg" alt="AWS ELB" loading="eager" />
+                    <span class="juggle-tooltip">AWS ELB</span>
+                  </div>
+                </div>
+              </div>
 
-            <!-- AWS IAM -->
-            <div class="juggle-orb orb-iam" title="AWS Identity and Access Management">
-              <img src="assets/icons/aws-iam.svg" alt="AWS IAM" loading="eager" />
-              <span class="juggle-tooltip">AWS IAM</span>
-            </div>
+              <!-- AWS ECS -->
+              <div class="juggle-orb orb-ecs" style="--angle: 180deg; --bob-delay: -1.95s;" title="Amazon Elastic Container Service">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/aws-ecs.svg" alt="Amazon ECS" loading="eager" />
+                    <span class="juggle-tooltip">Amazon ECS</span>
+                  </div>
+                </div>
+              </div>
 
-            <!-- AWS VPC -->
-            <div class="juggle-orb orb-vpc" title="Amazon Virtual Private Cloud">
-              <img src="assets/icons/aws-vpc.svg" alt="Amazon VPC" loading="eager" />
-              <span class="juggle-tooltip">Amazon VPC</span>
-            </div>
+              <!-- AWS Auto Scaling -->
+              <div class="juggle-orb orb-autoscaling" style="--angle: 212.73deg; --bob-delay: -2.3s;" title="EC2 Auto Scaling">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/aws-autoscaling.svg" alt="AWS Auto Scaling" loading="eager" />
+                    <span class="juggle-tooltip">Auto Scaling</span>
+                  </div>
+                </div>
+              </div>
 
-            <!-- AWS EKS -->
-            <div class="juggle-orb orb-eks" title="Amazon Elastic Kubernetes Service">
-              <img src="assets/icons/aws-eks.svg" alt="Amazon EKS" loading="eager" />
-              <span class="juggle-tooltip">Amazon EKS</span>
-            </div>
+              <!-- Prometheus -->
+              <div class="juggle-orb orb-prometheus" style="--angle: 245.45deg; --bob-delay: -2.65s;" title="Prometheus Cloud Telemetry">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/tool-prometheus.svg" alt="Prometheus" loading="eager" />
+                    <span class="juggle-tooltip">Prometheus</span>
+                  </div>
+                </div>
+              </div>
 
-            <!-- AWS ECS -->
-            <div class="juggle-orb orb-ecs" title="Amazon Elastic Container Service">
-              <img src="assets/icons/aws-ecs.svg" alt="Amazon ECS" loading="eager" />
-              <span class="juggle-tooltip">Amazon ECS</span>
-            </div>
+              <!-- AWS CloudWatch -->
+              <div class="juggle-orb orb-cloudwatch" style="--angle: 278.18deg; --bob-delay: -3.0s;" title="Amazon CloudWatch Monitoring">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/aws-cloudwatch.svg" alt="Amazon CloudWatch" loading="eager" />
+                    <span class="juggle-tooltip">CloudWatch</span>
+                  </div>
+                </div>
+              </div>
 
-            <!-- AWS KMS -->
-            <div class="juggle-orb orb-kms" title="AWS Key Management Service">
-              <img src="assets/icons/aws-kms.svg" alt="AWS KMS" loading="eager" />
-              <span class="juggle-tooltip">AWS KMS</span>
-            </div>
+              <!-- Grafana -->
+              <div class="juggle-orb orb-grafana" style="--angle: 310.91deg; --bob-delay: -3.35s;" title="Grafana Telemetry Dashboards">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/tool-grafana.svg" alt="Grafana" loading="eager" />
+                    <span class="juggle-tooltip">Grafana</span>
+                  </div>
+                </div>
+              </div>
 
-            <!-- AWS CloudWatch -->
-            <div class="juggle-orb orb-cloudwatch" title="Amazon CloudWatch Monitoring">
-              <img src="assets/icons/aws-cloudwatch.svg" alt="Amazon CloudWatch" loading="eager" />
-              <span class="juggle-tooltip">CloudWatch</span>
-            </div>
-
-            <!-- AWS CodePipeline -->
-            <div class="juggle-orb orb-codepipeline" title="AWS CodePipeline">
-              <img src="assets/icons/aws-codepipeline.svg" alt="AWS CodePipeline" loading="eager" />
-              <span class="juggle-tooltip">CodePipeline</span>
-            </div>
-
-            <!-- Terraform -->
-            <div class="juggle-orb orb-terraform" title="HashiCorp Terraform (IaC)">
-              <img src="assets/icons/tool-terraform.svg" alt="Terraform" loading="eager" />
-              <span class="juggle-tooltip">Terraform IaC</span>
-            </div>
-
-            <!-- Kubernetes (K8s) -->
-            <div class="juggle-orb orb-k8s" title="Kubernetes (K8s)">
-              <img src="assets/icons/tool-k8s.svg" alt="Kubernetes" loading="eager" />
-              <span class="juggle-tooltip">Kubernetes (K8s)</span>
-            </div>
-
-            <!-- Docker -->
-            <div class="juggle-orb orb-docker" title="Docker Containerization">
-              <img src="assets/icons/tool-docker.svg" alt="Docker" loading="eager" />
-              <span class="juggle-tooltip">Docker</span>
-            </div>
-
-            <!-- Argo CD -->
-            <div class="juggle-orb orb-argocd" title="Argo CD (GitOps Continuous Delivery)">
-              <img src="assets/icons/tool-argocd.svg" alt="Argo CD" loading="eager" />
-              <span class="juggle-tooltip">Argo CD</span>
-            </div>
-
-            <!-- Prometheus -->
-            <div class="juggle-orb orb-prometheus" title="Prometheus Cloud Telemetry">
-              <img src="assets/icons/tool-prometheus.svg" alt="Prometheus" loading="eager" />
-              <span class="juggle-tooltip">Prometheus</span>
-            </div>
-
-            <!-- Grafana -->
-            <div class="juggle-orb orb-grafana" title="Grafana Dashboards">
-              <img src="assets/icons/tool-grafana.svg" alt="Grafana" loading="eager" />
-              <span class="juggle-tooltip">Grafana</span>
+              <!-- AWS CodePipeline -->
+              <div class="juggle-orb orb-codepipeline" style="--angle: 343.64deg; --bob-delay: -3.7s;" title="AWS CodePipeline (Continuous Delivery)">
+                <div class="orb-bob">
+                  <div class="orb-icon-inner">
+                    <img src="assets/icons/aws-codepipeline.svg" alt="AWS CodePipeline" loading="eager" />
+                    <span class="juggle-tooltip">CodePipeline</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
