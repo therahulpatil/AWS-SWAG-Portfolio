@@ -74,24 +74,9 @@ window.PORTFOLIO_CONFIG = {
     ],
     milestones: [
       {
-        year: "March 2024",
-        title: "Secure AWS VPC Architecture for Web App Deployment",
-        desc: "Designed and implemented dual-tier VPC with public/private subnets, Bastion Host for secure SSH access, NAT Gateway for outbound traffic, and strict NACL/SG rules."
-      },
-      {
-        year: "February 2026",
-        title: "Earned AWS Certified Cloud Practitioner",
-        desc: "Demonstrated foundational mastery of core AWS cloud services, security, pricing models, and cloud architectural best practices. (ID: c49b3418666a41818f74795c50633cff)"
-      },
-      {
-        year: "August 2026",
-        title: "CDAC PGCP ITISS & SecureDevOps Pipeline Project",
-        desc: "Graduated CDAC PGCP ITISS. Engineered end-to-end DevSecOps platform with Terraform, Jenkins, SonarQube, OWASP ZAP, Trivy, Docker, Prometheus, and Grafana."
-      },
-      {
-        year: "October 2026",
-        title: "Earned AWS Certified Solutions Architect – Associate",
-        desc: "Validated deep technical expertise in architecting secure, cost-optimized, fault-tolerant, and high-performing systems on AWS. (ID: 5b5a1c7f6a824de5a661e9149a0c18fd)"
+        year: "November 2026",
+        title: "AWS Portfolio Challenge & Global Cloud Deployment",
+        desc: "Engineered this interactive AWS CloudShell portfolio, deployed with continuous delivery on AWS Amplify Hosting, and connected global edge delivery via Amazon CloudFront."
       },
       {
         year: "Present",
@@ -99,9 +84,24 @@ window.PORTFOLIO_CONFIG = {
         desc: "Driving automated cloud infrastructure provisioning, CI/CD pipelines, containerization, and AWS cloud security compliance in enterprise production environments."
       },
       {
-        year: "November 2026",
-        title: "AWS Portfolio Challenge & Global Cloud Deployment",
-        desc: "Engineered this interactive AWS CloudShell portfolio, deployed with continuous delivery on AWS Amplify Hosting, and connected global edge delivery via Amazon CloudFront."
+        year: "October 2026",
+        title: "Earned AWS Certified Solutions Architect – Associate",
+        desc: "Validated deep technical expertise in architecting secure, cost-optimized, fault-tolerant, and high-performing systems on AWS. (ID: 5b5a1c7f6a824de5a661e9149a0c18fd)"
+      },
+      {
+        year: "August 2026",
+        title: "CDAC PGCP ITISS & SecureDevOps Pipeline Project",
+        desc: "Graduated CDAC PGCP ITISS. Engineered end-to-end DevSecOps platform with Terraform, Jenkins, SonarQube, OWASP ZAP, Trivy, Docker, Prometheus, and Grafana."
+      },
+      {
+        year: "February 2026",
+        title: "Earned AWS Certified Cloud Practitioner",
+        desc: "Demonstrated foundational mastery of core AWS cloud services, security, pricing models, and cloud architectural best practices. (ID: c49b3418666a41818f74795c50633cff)"
+      },
+      {
+        year: "March 2024",
+        title: "Secure AWS VPC Architecture for Web App Deployment",
+        desc: "Designed and implemented dual-tier VPC with public/private subnets, Bastion Host for secure SSH access, NAT Gateway for outbound traffic, and strict NACL/SG rules."
       }
     ]
   },

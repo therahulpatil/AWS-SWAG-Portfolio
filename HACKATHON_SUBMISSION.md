@@ -87,13 +87,13 @@ Located in [`terraform/`](terraform/):
    - **AWS Certified Cloud Practitioner** (Validation ID: `c49b3418666a41818f74795c50633cff`) — [Verify on CertMetrics](https://cp.certmetrics.com/amazon/en/public/verify/credential/c49b3418666a41818f74795c50633cff)
 2. **About Me & Engineering Journey**:
    - Backstory, current role at HeapTrace Technologies, and 3 core principles (Defense-in-Depth, Automated DevSecOps, Observability).
-   - Milestone timeline highlighting:
-     - *March 2024*: Secure AWS VPC Architecture.
-     - *February 2026*: AWS Certified Cloud Practitioner.
-     - *August 2026*: CDAC PGCP ITISS & SecureDevOps Pipeline.
-     - *October 2026*: AWS Certified Solutions Architect – Associate.
-     - *Present*: DevOps Engineer Associate at HeapTrace Technologies.
+   - Milestone timeline (reverse chronological order):
      - *November 2026*: AWS Portfolio Challenge & Global Cloud Deployment.
+     - *Present*: DevOps Engineer Associate at HeapTrace Technologies.
+     - *October 2026*: AWS Certified Solutions Architect – Associate.
+     - *August 2026*: CDAC PGCP ITISS & SecureDevOps Pipeline.
+     - *February 2026*: AWS Certified Cloud Practitioner.
+     - *March 2024*: Secure AWS VPC Architecture.
 3. **Skills & Tech Superpowers**:
    - Filterable skills across Cloud & AWS, DevSecOps & CI/CD, Security & Networking, and Monitoring & Tools.
 4. **Engineering Projects**:
