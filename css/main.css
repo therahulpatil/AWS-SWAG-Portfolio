@@ -626,58 +626,6 @@ body::after {
   font-family: var(--font-mono);
 }
 
-/* Orbit Toggle Pill Button (Mobile, Tablet & Desktop Friendly) */
-.orbit-toggle-pill {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(13, 19, 34, 0.92);
-  border: 1px solid rgba(255, 153, 0, 0.45);
-  color: #ffffff;
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  font-weight: 600;
-  padding: 0.4rem 0.95rem;
-  border-radius: var(--radius-full);
-  backdrop-filter: blur(10px);
-  cursor: pointer;
-  pointer-events: auto;
-  z-index: 20;
-  transition: all 0.25s ease;
-  white-space: nowrap;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
-  user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.orbit-toggle-pill:hover,
-.orbit-toggle-pill:focus-visible {
-  border-color: var(--aws-orange);
-  background: rgba(22, 32, 56, 0.98);
-  transform: translateX(-50%) translateY(-2px);
-  box-shadow: 0 6px 22px rgba(255, 153, 0, 0.45);
-  outline: none;
-}
-
-.orbit-toggle-pill .pill-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--emerald-neon);
-  box-shadow: 0 0 8px var(--emerald-neon);
-  animation: pulse-dot 2s infinite;
-}
-
-.orbit-toggle-pill.is-paused .pill-dot {
-  background: var(--aws-orange);
-  box-shadow: 0 0 8px var(--aws-orange);
-  animation: none;
-}
-
 /* ==========================================================================
    ABOUT ME SECTION
    ========================================================================== */
@@ -1924,10 +1872,6 @@ textarea.form-input {
     width: 215px;
     height: 215px;
   }
-  .orbit-toggle-pill {
-    bottom: 8px;
-    font-size: 0.72rem;
-  }
 }
 
 @media (max-width: 768px) {
@@ -1951,11 +1895,6 @@ textarea.form-input {
   }
   .badge-val {
     font-size: 0.8rem;
-  }
-  .orbit-toggle-pill {
-    bottom: 6px;
-    font-size: 0.7rem;
-    padding: 0.35rem 0.8rem;
   }
 }
 
@@ -1985,11 +1924,6 @@ textarea.form-input {
   .badge-val {
     font-size: 0.72rem;
   }
-  .orbit-toggle-pill {
-    bottom: 2px;
-    font-size: 0.68rem;
-    padding: 0.3rem 0.7rem;
-  }
 }
 
 @media (max-width: 360px) {
@@ -2005,10 +1939,6 @@ textarea.form-input {
   .avatar-wrapper {
     width: 130px;
     height: 130px;
-  }
-  .orbit-toggle-pill {
-    font-size: 0.64rem;
-    padding: 0.25rem 0.6rem;
   }
 }
 

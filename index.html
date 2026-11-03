@@ -15,8 +15,8 @@
   <meta property="og:image" content="assets/images/project-vpc.svg" />
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/main.css?v=2.2" />
-  <link rel="stylesheet" href="css/terminal.css?v=2.2" />
+  <link rel="stylesheet" href="css/main.css?v=2.3" />
+  <link rel="stylesheet" href="css/terminal.css?v=2.3" />
   <link rel="icon" type="image/svg+xml" href="assets/images/avatar.svg" />
 </head>
 <body>
@@ -339,12 +339,6 @@
             </div>
           </div>
 
-          <!-- Mobile / Tab / Desktop Friendly Toggle Button -->
-          <button class="orbit-toggle-pill" id="orbit-toggle-btn" aria-label="Toggle AWS Juggling Tools Animation">
-            <span class="pill-dot"></span>
-            <span class="pill-text" id="orbit-toggle-text">🪐 Juggle AWS Tools (Active)</span>
-          </button>
-
           <!-- Inline 10-Second Auto-Disappear Script (Guaranteed Instant Execution) -->
           <script>
             (function () {
@@ -355,12 +349,6 @@
                   o.style.opacity = "0";
                   o.style.visibility = "hidden";
                   o.style.pointerEvents = "none";
-                }
-                var b = document.getElementById("orbit-toggle-btn");
-                if (b) {
-                  b.classList.add("is-paused");
-                  var t = document.getElementById("orbit-toggle-text");
-                  if (t) t.textContent = "▶ Tap to Juggle Tools";
                 }
               }, 10000);
             })();
@@ -828,9 +816,9 @@
   <div class="toast-container" id="toast-container"></div>
 
   <!-- Scripts -->
-  <script src="js/config.js?v=2.2"></script>
-  <script src="js/matrix.js?v=2.2"></script>
-  <script src="js/terminal.js?v=2.2"></script>
-  <script src="js/main.js?v=2.2"></script>
+  <script src="js/config.js?v=2.3"></script>
+  <script src="js/matrix.js?v=2.3"></script>
+  <script src="js/terminal.js?v=2.3"></script>
+  <script src="js/main.js?v=2.3"></script>
 </body>
 </html>

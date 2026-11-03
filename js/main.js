@@ -402,13 +402,11 @@ function showToast(message) {
 }
 
 /* ==========================================================================
-   JUGGLING LOGOS 10s AUTO-DISAPPEAR & RESPONSIVE TOGGLE (DESKTOP, TAB, MOBILE)
+   JUGGLING LOGOS 10s AUTO-DISAPPEAR & PORTRAIT REPLAY (DESKTOP, TAB, MOBILE)
    ========================================================================== */
 function setupJugglingLogos() {
   const orbit = document.getElementById("juggling-orbit");
   const avatar = document.getElementById("hero-avatar");
-  const toggleBtn = document.getElementById("orbit-toggle-btn");
-  const toggleText = document.getElementById("orbit-toggle-text");
   if (!orbit) return;
 
   const DURATION_MS = 10000; // 10 seconds
@@ -419,10 +417,6 @@ function setupJugglingLogos() {
     orbit.style.opacity = "0";
     orbit.style.visibility = "hidden";
     orbit.style.pointerEvents = "none";
-    if (toggleBtn) {
-      toggleBtn.classList.add("is-paused");
-      if (toggleText) toggleText.textContent = "▶ Tap to Juggle Tools";
-    }
   }
 
   function showLogos() {
@@ -436,11 +430,6 @@ function setupJugglingLogos() {
     void orbit.offsetWidth; // Force reflow
     orbit.style.animation = "orbit-disappear 1.2s cubic-bezier(0.4, 0, 0.2, 1) 10s forwards";
 
-    if (toggleBtn) {
-      toggleBtn.classList.remove("is-paused");
-      if (toggleText) toggleText.textContent = "🪐 Juggle AWS Tools (Active)";
-    }
-
     clearTimeout(timerId);
     timerId = setTimeout(hideLogos, DURATION_MS);
   }
@@ -448,29 +437,13 @@ function setupJugglingLogos() {
   // 1. Initial 10-second unconditional disappearance
   timerId = setTimeout(hideLogos, DURATION_MS);
 
-  // 2. Desktop / Mobile / Tab: Tap or click portrait to re-summon for 10s
+  // 2. Desktop / Mobile / Tab: Tap or click portrait to replay for 10s
   if (avatar) {
-    avatar.addEventListener("click", () => {
-      showLogos();
-    });
+    avatar.addEventListener("click", showLogos);
     avatar.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         showLogos();
-      }
-    });
-  }
-
-  // 3. Pill Button Click / Tap (Desktop, Tablet, Mobile)
-  if (toggleBtn) {
-    toggleBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const isCurrentlyHidden = orbit.classList.contains("orbit-hidden") || orbit.style.opacity === "0";
-      if (isCurrentlyHidden) {
-        showLogos();
-      } else {
-        clearTimeout(timerId);
-        hideLogos();
       }
     });
   }
