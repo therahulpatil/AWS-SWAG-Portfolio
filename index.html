@@ -330,14 +330,20 @@
             </div>
           </div>
 
-          <!-- Main Portrait Avatar -->
-          <div class="avatar-wrapper">
+          <!-- Main Portrait Avatar (Tap/Click to Juggle Tools) -->
+          <div class="avatar-wrapper" id="hero-avatar" role="button" tabindex="0" title="Tap or click portrait to juggle AWS & DevOps tools">
             <img src="assets/images/rahul-patil.jpg" alt="Rahul Patil - DevOps Engineer Associate" />
             <div class="avatar-badge-card">
               <span class="badge-label">AWS Certified</span>
               <span class="badge-val">Solutions Architect & CCP</span>
             </div>
           </div>
+
+          <!-- Mobile / Tab / Desktop Friendly Toggle Button -->
+          <button class="orbit-toggle-pill" id="orbit-toggle-btn" aria-label="Toggle AWS Juggling Tools Animation">
+            <span class="pill-dot"></span>
+            <span class="pill-text" id="orbit-toggle-text">🪐 Juggle AWS Tools (Active)</span>
+          </button>
         </div>
       </div>
     </section>

@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupModalHandlers();
   setupContactForm(cfg);
   setupHintTriggers();
+  setupJugglingLogos();
 });
 
 /* ==========================================================================
@@ -398,4 +399,100 @@ function showToast(message) {
     toast.style.transition = "all 0.3s ease";
     setTimeout(() => toast.remove(), 300);
   }, 3500);
+}
+
+/* ==========================================================================
+   JUGGLING LOGOS 10s AUTO-DISAPPEAR & RESPONSIVE TOGGLE (DESKTOP, TAB, MOBILE)
+   ========================================================================== */
+function setupJugglingLogos() {
+  const orbit = document.getElementById("juggling-orbit");
+  const avatar = document.getElementById("hero-avatar");
+  const toggleBtn = document.getElementById("orbit-toggle-btn");
+  const toggleText = document.getElementById("orbit-toggle-text");
+  if (!orbit) return;
+
+  const DURATION_MS = 10000; // 10 seconds
+  let timerId = null;
+  let isHovered = false;
+  let isVisible = true;
+
+  function updateUiState(active) {
+    isVisible = active;
+    if (active) {
+      orbit.classList.remove("orbit-hidden");
+      if (toggleBtn) toggleBtn.classList.remove("is-paused");
+      if (toggleText) toggleText.textContent = "🪐 Juggle AWS Tools (Active)";
+    } else {
+      orbit.classList.add("orbit-hidden");
+      if (toggleBtn) toggleBtn.classList.add("is-paused");
+      if (toggleText) toggleText.textContent = "▶ Tap to Juggle Tools";
+    }
+  }
+
+  function startCountdown() {
+    clearTimeout(timerId);
+    updateUiState(true);
+    timerId = setTimeout(() => {
+      if (!isHovered) {
+        updateUiState(false);
+      }
+    }, DURATION_MS);
+  }
+
+  // 1. Initial 10-second countdown on page load
+  startCountdown();
+
+  // 2. Desktop: If visitor hovers over any juggling orb, pause the disappear timer
+  orbit.addEventListener("mouseenter", () => {
+    isHovered = true;
+    clearTimeout(timerId);
+  });
+
+  orbit.addEventListener("mouseleave", () => {
+    isHovered = false;
+    clearTimeout(timerId);
+    timerId = setTimeout(() => {
+      updateUiState(false);
+    }, 3000);
+  });
+
+  // 3. Desktop / Mobile / Tab: Tap or click portrait to toggle or re-summon for 10s
+  function handleReactivate() {
+    startCountdown();
+  }
+
+  if (avatar) {
+    avatar.addEventListener("click", handleReactivate);
+    avatar.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        handleReactivate();
+      }
+    });
+  }
+
+  // 4. Pill Button Click / Tap (Desktop, Tablet, Mobile)
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (isVisible) {
+        clearTimeout(timerId);
+        updateUiState(false);
+      } else {
+        startCountdown();
+      }
+    });
+  }
+
+  // 5. Mobile & Tablet Touch Support for Tooltips
+  document.querySelectorAll(".juggle-orb").forEach((orb) => {
+    orb.addEventListener("touchstart", () => {
+      isHovered = true;
+      clearTimeout(timerId);
+      timerId = setTimeout(() => {
+        isHovered = false;
+        updateUiState(false);
+      }, 4000);
+    }, { passive: true });
+  });
 }

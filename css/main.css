@@ -66,6 +66,8 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -74,6 +76,7 @@ body {
   font-family: var(--font-sans);
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100%;
   position: relative;
   min-height: 100vh;
 }
@@ -545,9 +548,11 @@ body::after {
 .hero-visual {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 560px;
+  min-height: 580px;
+  width: 100%;
 }
 
 .avatar-wrapper {
@@ -562,6 +567,17 @@ body::after {
   align-items: center;
   justify-content: center;
   z-index: 5;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.avatar-wrapper:hover,
+.avatar-wrapper:focus-visible {
+  transform: scale(1.04);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 45px var(--aws-orange-glow);
+  outline: none;
 }
 
 .avatar-wrapper img {
@@ -589,6 +605,7 @@ body::after {
   white-space: nowrap;
   text-align: center;
   z-index: 6;
+  pointer-events: none;
 }
 
 .avatar-badge-card span {
@@ -607,6 +624,58 @@ body::after {
   font-weight: 700;
   color: var(--aws-orange);
   font-family: var(--font-mono);
+}
+
+/* Orbit Toggle Pill Button (Mobile, Tablet & Desktop Friendly) */
+.orbit-toggle-pill {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(13, 19, 34, 0.92);
+  border: 1px solid rgba(255, 153, 0, 0.45);
+  color: #ffffff;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 20;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.6);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.orbit-toggle-pill:hover,
+.orbit-toggle-pill:focus-visible {
+  border-color: var(--aws-orange);
+  background: rgba(22, 32, 56, 0.98);
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 6px 22px rgba(255, 153, 0, 0.45);
+  outline: none;
+}
+
+.orbit-toggle-pill .pill-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--emerald-neon);
+  box-shadow: 0 0 8px var(--emerald-neon);
+  animation: pulse-dot 2s infinite;
+}
+
+.orbit-toggle-pill.is-paused .pill-dot {
+  background: var(--aws-orange);
+  box-shadow: 0 0 8px var(--aws-orange);
+  animation: none;
 }
 
 /* ==========================================================================
@@ -1551,10 +1620,22 @@ textarea.form-input {
   left: 50%;
   width: 560px;
   height: 560px;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1);
   pointer-events: none;
   z-index: 10;
-  transition: transform 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Gracefully disappears after 10 seconds */
+.juggling-tools-orbit.orbit-hidden {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%) scale(0.72);
+  pointer-events: none;
 }
 
 /* Subtle glowing orbital trajectory guide rings */
@@ -1815,42 +1896,104 @@ textarea.form-input {
 /* Responsive adjustments for Tablets & Mobile */
 @media (max-width: 992px) {
   .hero-visual {
-    min-height: 490px;
+    min-height: 510px;
     margin-top: 1.5rem;
   }
   .juggling-tools-orbit {
     transform: translate(-50%, -50%) scale(0.80);
   }
+  .juggling-tools-orbit.orbit-hidden {
+    transform: translate(-50%, -50%) scale(0.60);
+  }
   .avatar-wrapper {
-    width: 220px;
-    height: 220px;
+    width: 215px;
+    height: 215px;
+  }
+  .orbit-toggle-pill {
+    bottom: 8px;
+    font-size: 0.72rem;
   }
 }
 
 @media (max-width: 768px) {
   .hero-visual {
-    min-height: 430px;
-    margin-top: 1.5rem;
+    min-height: 450px;
+    margin-top: 1rem;
   }
   .juggling-tools-orbit {
     transform: translate(-50%, -50%) scale(0.68);
   }
+  .juggling-tools-orbit.orbit-hidden {
+    transform: translate(-50%, -50%) scale(0.48);
+  }
   .avatar-wrapper {
-    width: 190px;
-    height: 190px;
+    width: 180px;
+    height: 180px;
+  }
+  .avatar-badge-card {
+    padding: 0.35rem 0.7rem;
+    bottom: 6px;
+  }
+  .badge-val {
+    font-size: 0.8rem;
+  }
+  .orbit-toggle-pill {
+    bottom: 6px;
+    font-size: 0.7rem;
+    padding: 0.35rem 0.8rem;
   }
 }
 
 @media (max-width: 480px) {
   .hero-visual {
-    min-height: 370px;
+    min-height: 390px;
+    overflow: visible;
   }
   .juggling-tools-orbit {
-    transform: translate(-50%, -50%) scale(0.56);
+    transform: translate(-50%, -50%) scale(0.54);
+  }
+  .juggling-tools-orbit.orbit-hidden {
+    transform: translate(-50%, -50%) scale(0.38);
   }
   .avatar-wrapper {
-    width: 165px;
-    height: 165px;
+    width: 150px;
+    height: 150px;
+    padding: 4px;
+  }
+  .avatar-badge-card {
+    padding: 0.28rem 0.55rem;
+    bottom: 4px;
+  }
+  .badge-label {
+    font-size: 0.6rem;
+  }
+  .badge-val {
+    font-size: 0.72rem;
+  }
+  .orbit-toggle-pill {
+    bottom: 2px;
+    font-size: 0.68rem;
+    padding: 0.3rem 0.7rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-visual {
+    min-height: 350px;
+  }
+  .juggling-tools-orbit {
+    transform: translate(-50%, -50%) scale(0.46);
+  }
+  .juggling-tools-orbit.orbit-hidden {
+    transform: translate(-50%, -50%) scale(0.30);
+  }
+  .avatar-wrapper {
+    width: 130px;
+    height: 130px;
+  }
+  .orbit-toggle-pill {
+    font-size: 0.64rem;
+    padding: 0.25rem 0.6rem;
   }
 }
 
