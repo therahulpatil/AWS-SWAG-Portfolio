@@ -1625,6 +1625,8 @@ textarea.form-input {
   z-index: 10;
   opacity: 1;
   visibility: visible;
+  /* Pure CSS 10-Second Auto-Disappear Timer Fallback */
+  animation: orbit-disappear 1.2s cubic-bezier(0.4, 0, 0.2, 1) 10s forwards;
   transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1),
               transform 1.2s cubic-bezier(0.4, 0, 0.2, 1),
               visibility 1.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1632,10 +1634,23 @@ textarea.form-input {
 
 /* Gracefully disappears after 10 seconds */
 .juggling-tools-orbit.orbit-hidden {
-  opacity: 0;
-  visibility: hidden;
-  transform: translate(-50%, -50%) scale(0.72);
-  pointer-events: none;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translate(-50%, -50%) scale(0.72) !important;
+  pointer-events: none !important;
+}
+
+@keyframes orbit-disappear {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(0.72);
+  }
 }
 
 /* Subtle glowing orbital trajectory guide rings */

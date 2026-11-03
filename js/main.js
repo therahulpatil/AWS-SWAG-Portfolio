@@ -413,86 +413,65 @@ function setupJugglingLogos() {
 
   const DURATION_MS = 10000; // 10 seconds
   let timerId = null;
-  let isHovered = false;
-  let isVisible = true;
 
-  function updateUiState(active) {
-    isVisible = active;
-    if (active) {
-      orbit.classList.remove("orbit-hidden");
-      if (toggleBtn) toggleBtn.classList.remove("is-paused");
-      if (toggleText) toggleText.textContent = "🪐 Juggle AWS Tools (Active)";
-    } else {
-      orbit.classList.add("orbit-hidden");
-      if (toggleBtn) toggleBtn.classList.add("is-paused");
+  function hideLogos() {
+    orbit.classList.add("orbit-hidden");
+    orbit.style.opacity = "0";
+    orbit.style.visibility = "hidden";
+    orbit.style.pointerEvents = "none";
+    if (toggleBtn) {
+      toggleBtn.classList.add("is-paused");
       if (toggleText) toggleText.textContent = "▶ Tap to Juggle Tools";
     }
   }
 
-  function startCountdown() {
+  function showLogos() {
+    orbit.classList.remove("orbit-hidden");
+    orbit.style.opacity = "1";
+    orbit.style.visibility = "visible";
+    orbit.style.pointerEvents = "auto";
+    
+    // Reset and replay CSS animation
+    orbit.style.animation = "none";
+    void orbit.offsetWidth; // Force reflow
+    orbit.style.animation = "orbit-disappear 1.2s cubic-bezier(0.4, 0, 0.2, 1) 10s forwards";
+
+    if (toggleBtn) {
+      toggleBtn.classList.remove("is-paused");
+      if (toggleText) toggleText.textContent = "🪐 Juggle AWS Tools (Active)";
+    }
+
     clearTimeout(timerId);
-    updateUiState(true);
-    timerId = setTimeout(() => {
-      if (!isHovered) {
-        updateUiState(false);
-      }
-    }, DURATION_MS);
+    timerId = setTimeout(hideLogos, DURATION_MS);
   }
 
-  // 1. Initial 10-second countdown on page load
-  startCountdown();
+  // 1. Initial 10-second unconditional disappearance
+  timerId = setTimeout(hideLogos, DURATION_MS);
 
-  // 2. Desktop: If visitor hovers over any juggling orb, pause the disappear timer
-  orbit.addEventListener("mouseenter", () => {
-    isHovered = true;
-    clearTimeout(timerId);
-  });
-
-  orbit.addEventListener("mouseleave", () => {
-    isHovered = false;
-    clearTimeout(timerId);
-    timerId = setTimeout(() => {
-      updateUiState(false);
-    }, 3000);
-  });
-
-  // 3. Desktop / Mobile / Tab: Tap or click portrait to toggle or re-summon for 10s
-  function handleReactivate() {
-    startCountdown();
-  }
-
+  // 2. Desktop / Mobile / Tab: Tap or click portrait to re-summon for 10s
   if (avatar) {
-    avatar.addEventListener("click", handleReactivate);
+    avatar.addEventListener("click", () => {
+      showLogos();
+    });
     avatar.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        handleReactivate();
+        showLogos();
       }
     });
   }
 
-  // 4. Pill Button Click / Tap (Desktop, Tablet, Mobile)
+  // 3. Pill Button Click / Tap (Desktop, Tablet, Mobile)
   if (toggleBtn) {
     toggleBtn.addEventListener("click", (e) => {
       e.stopPropagation();
-      if (isVisible) {
-        clearTimeout(timerId);
-        updateUiState(false);
+      const isCurrentlyHidden = orbit.classList.contains("orbit-hidden") || orbit.style.opacity === "0";
+      if (isCurrentlyHidden) {
+        showLogos();
       } else {
-        startCountdown();
+        clearTimeout(timerId);
+        hideLogos();
       }
     });
   }
-
-  // 5. Mobile & Tablet Touch Support for Tooltips
-  document.querySelectorAll(".juggle-orb").forEach((orb) => {
-    orb.addEventListener("touchstart", () => {
-      isHovered = true;
-      clearTimeout(timerId);
-      timerId = setTimeout(() => {
-        isHovered = false;
-        updateUiState(false);
-      }, 4000);
-    }, { passive: true });
-  });
 }
